@@ -2,7 +2,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
-	<meta name=viewport content='width=800'>
+  <meta name=viewport content='width=800'>
     <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
     <style type="text/css">
       /* Color scheme stolen from Sergey Karayev */
@@ -35,19 +35,19 @@
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
       font-size: 32px;
       }
-	.fade {
-	   transition: opacity .2s ease-in-out;
-	   -moz-transition: opacity .2s ease-in-out;
-	   -webkit-transition: opacity .2s ease-in-out;
-	   }
-	  
+  .fade {
+     transition: opacity .2s ease-in-out;
+     -moz-transition: opacity .2s ease-in-out;
+     -webkit-transition: opacity .2s ease-in-out;
+     }
+    
 
 
-	img {
-	    display: inline;
-	    margin: 0 auto;
-	    width: 100%;
-	}
+  img {
+      display: inline;
+      margin: 0 auto;
+      width: 100%;
+  }
    .image-cropper {
       width: 250px;
       height: 250px;
@@ -57,7 +57,7 @@
   }
    .redText { 
     color: red; 
-	} 	    
+  }       
     </style>
     <link rel="icon" type="image" href="img/logo.jpg">
     <title>Abhishek Sinha</title>
@@ -79,7 +79,7 @@
 
 
                                   <br><br>
-				  I am currently a Research Assistant under Professor Stefano Ermon and am pursuing research in generative models. Previously
+          I am currently a Research Assistant under Professor Stefano Ermon and am pursuing research in generative models. Previously
                                   I was a Course Assistant for the couse <a href="http://web.stanford.edu/class/cs330/"> CS 330</a> - "Deep Multi Task and Meta Learning" taught by Professor Chelsea Finn.
                   <br><br>
                   Prior to coming here, I was working at Adobe India as Member of Technical Staff-2. I worked on a deep learning based visual search product for clothing based recommendation which accepts images, segments them and then recommends related desired products. This work won the "Best Paper Award" at a CVPR workshop, 2019. I was also involved in several other research based projects during my work.
@@ -104,7 +104,28 @@
                 <heading style="font-size:22px">Selected Publications</heading>
               </td>
             </tr>
-		
+            
+            <tr >
+            
+                    <td width="30%"><img id="img-opt" src="img/D2C.png" alt="project_img" width="160" style="border-style: none">
+                    </td>
+        
+                        <td valign="top" width="70%">
+                        <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2106.06819">
+            <papertitle>D2C: Diffusion-Denoising Models for Few-shot Conditional Generation</papertitle></a><br>
+                        
+                        <p>Developed a single model that can both learn rich latent representations, and sample images from that latent space.
+                        <br><br>
+                        Added contrastive loss on top of VAE to learn good representations and learnt a strong prior over the latent space of VAE, using diffusion models.
+      <br><br>
+      Our model allows us to perform few shot conditional generation tasks, such as conditional image manipulation with limited examples.
+                        <br><br>
+                        Paper accepted at <span class="redText"> NeurIPS, 2021 </span>.
+                        </p>
+                        </a> </p>
+                        </td>
+                    </tr>
+
             <tr >
             
                     <td width="30%"><img id="img-opt" src="img/NDA.png" alt="project_img" width="160" style="border-style: none">
@@ -117,12 +138,12 @@
                         <p>Proposed a new GAN training objective to incorporate negative data augmentation.
                         <br><br>
                         Obtained significant gain in conditional/unconditional image generation and anomaly detection using the discriminator.
-			<br><br>
-			Incorporated negative augmentations for contrastive learning based approaches for images and videos and achieved gains in linear classification.
+      <br><br>
+      Incorporated negative augmentations for contrastive learning based approaches for images and videos and achieved gains in linear classification.
                         <br><br>
-                        The work was accepted at <span class="redText"> ICLR, 2020 </span>.
-			<br><br>
-			<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k">
+                        Paper accepted at <span class="redText"> ICLR, 2020 </span>.
+      <br><br>
+      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k">
             Youtube Video summarizing the paper.
                         </p>
                         </a> </p>
@@ -142,7 +163,7 @@
                         <br><br>
                         Achieved 20% and 40% improvement in training time for Cifar-10 and ImageNet datasets respectively.
                         <br><br>
-                        The work was accepted at <span class="redText"> ICLR, 2017 </span>.
+                        Paper accepted at <span class="redText"> ICLR, 2017 </span>.
                         </p>
                         </a> </p>
                         </td>
@@ -159,7 +180,7 @@
                       <br><br>
                       The proposed approach beats the current state-of-the-art accuracy on mini-ImageNet, CUB and CIFAR-FS datasets by 3-8%.
                       <br><br>
-			      Work accepted at <span class="redText"> WACV, 2020 </span>.       
+            Paper accepted at <span class="redText"> WACV, 2020 </span>.       
                       </p>
                       </a> </p>
                     </td>
@@ -176,7 +197,7 @@
                       <br><br>
                       The algorithm achieved the state-of-the art adversarial accuracy against strong adversarial attacks.      
                       <br><br>
-			      Work accepted at <span class="redText"> IJCAI, 2019 </span>.
+            Paper accepted at <span class="redText"> IJCAI, 2019 </span>.
                       </p>
                        
                       </a> </p>
@@ -195,7 +216,7 @@
                       <br><br>
                       The proposed methodology outperformed the state-of-the-art in terms of both speed and performance for the 2D as well as a 3D environment.     
                       <br><br>
-			      Work accepted at <span class="redText"> WACV, 2019 </span>.
+            Paper accepted at <span class="redText"> WACV, 2019 </span>.
                       </p>
                        
                       </a> </p>
@@ -214,7 +235,7 @@
                       <br><br>
                       Trained auto-encoder with contrastive learning to learn good representations, followed by diffusion model over the latent space to learn a generative model.
                       <br><br>
-            Work accepted at <span class="redText"> ICLR 2021 Workshop:  </span>Neural Compression: From Information Theory to Applications.
+            Paper accepted at <span class="redText"> ICLR 2021 Workshop:  </span>Neural Compression: From Information Theory to Applications.
                       </p>
                        
                       </a> </p>
@@ -231,7 +252,7 @@
                         
                       <p>Proposed a grid based training of siamese networks, allowing the network to observe mutiplte positive and negative image instances simultaneously.     
                       <br><br>
-			      Best Paper Award at <span class="redText"> CVPR Workshop, 2019 </span>.
+            Best Paper Award at <span class="redText"> CVPR Workshop, 2019 </span>.
                       </p>
                        
                       </a> </p>
@@ -250,7 +271,7 @@
                       <br><br>
                       Used these models for zero-shot transfer and weakly supervised object localization tasks, achieveing significant gains in performance.
                       <br><br>
-            Work accepted at <span class="redText"> ICLR 2020 Workshop:  </span>Towards Trustworthy ML.
+            Paper accepted at <span class="redText"> ICLR 2020 Workshop:  </span>Towards Trustworthy ML.
                       </p>
                        
                       </a> </p>
@@ -268,7 +289,7 @@
                       <p>Proposed a multi-conditional image generation pipeline that generates an image which contains the shape of first input and texture of second input image.
                       
                       <br><br>
-            Work accepted at <span class="redText"> NeurIPS Workshop </span>on Machine Learning for Creativity and Design 3.0, 2019.
+            Paper accepted at <span class="redText"> NeurIPS Workshop </span>on Machine Learning for Creativity and Design 3.0, 2019.
                       </p>
                        
                       </a> </p>
@@ -285,7 +306,7 @@
                         
                       <p>Used a modification of the neural architecture search to discover a kernel function for SVM over MNIST dataset.   
                       <br><br>
-			      Work accepted at <span class="redText"> GECCO, 2019 </span>.
+            Paper accepted at <span class="redText"> GECCO, 2019 </span>.
                       </p>
                        
                       </a> </p>
