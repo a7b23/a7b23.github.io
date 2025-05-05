@@ -1,418 +1,331 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-  <head>
-  <meta name=viewport content='width=800'>
-    <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-    <style type="text/css">
-      /* Color scheme stolen from Sergey Karayev */
-      a {
-      color: #1772d0;
-      text-decoration:none;
-      }
-      a:focus, a:hover {
-      color: #f09228;
-      text-decoration:none;
-      }
-      body,td,th {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 12px
-      }
-      strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 12px;
-      }
-      heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 22 px;
-      }
-      papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 13px;
-      font-weight: 700
-      }
-      name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
-      }
-  .fade {
-     transition: opacity .2s ease-in-out;
-     -moz-transition: opacity .2s ease-in-out;
-     -webkit-transition: opacity .2s ease-in-out;
-     }
-    
-
-
-  img {
-      display: inline;
-      margin: 0 auto;
-      width: 100%;
-  }
-   .image-cropper {
-      width: 250px;
-      height: 250px;
-      position: relative;
-      overflow: hidden;
-      border-radius: 50%;
-  }
-   .redText { 
-    color: red; 
-  }       
-    </style>
-    <link rel="icon" type="image" href="img/logo.jpg">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
     <title>Abhishek Sinha</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-    <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  </head>
-  <body>
-    <table width="800" border="0" align="center" cellspacing="0" cellpadding="0">
-      <tr>
-        <td>
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tr>
-              <td width="67%" valign="middle">
-                <p align="center">
-                  <name>Abhishek Sinha</name>
-                  </font>
-                <p align>I am currently a Senior Software Engineer in Google where I am working on MultiModal Post-training of Gemini. I was one of the core-contributors for the Gemini launch which led to the model being top on the LMSYS Vision leaderboard.
-                  Before Google, I worked at Waymo in the Perception Team, where I improved the data efficiency of various perception models. I graduated with a Master's degree in the department of Computer Science at <a href="https://www.stanford.edu/">Stanford University</a> in 2021.
-                  I am interested in the domain of computer vision and deep learning. I am specifically interested in topics such as Large Vision Language Models, Post-training RL algorithms, generative models, self-supervised learning and active learning.
+    <style>
+        /* Custom styles if needed, though Tailwind is preferred */
+        body {
+            font-family: 'Inter', sans-serif; /* Apply Inter font */
+        }
+        /* Style for publication/project titles */
+        .papertitle {
+            font-weight: 700;
+            font-size: 1.1rem; /* Slightly larger title */
+            color: #1772d0; /* Original link color */
+        }
+        .papertitle:hover {
+            color: #f09228; /* Original link hover color */
+        }
+        /* Style for section headings */
+        .section-heading {
+            font-size: 1.75rem; /* h2 equivalent */
+            font-weight: 700;
+            margin-bottom: 1.5rem; /* Add space below heading */
+            border-bottom: 2px solid #e5e7eb; /* Light gray bottom border */
+            padding-bottom: 0.5rem;
+        }
+        /* Highlight text color */
+        .highlight-text {
+            color: #dc2626; /* Tailwind red-600 */
+            font-weight: 600;
+        }
+        /* Ensure images within cards don't overflow */
+        .card-img {
+            width: 100%;
+            height: auto;
+            max-width: 200px; /* Limit image width */
+            object-fit: cover; /* Cover the area nicely */
+            border-radius: 0.5rem; /* Rounded corners for images */
+        }
+        /* Placeholder style */
+        .placeholder-img {
+            background-color: #e5e7eb; /* gray-200 */
+            color: #6b7280; /* gray-500 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 0.875rem;
+            border-radius: 0.5rem;
+            width: 200px; /* Match max-width */
+            height: 150px; /* Fixed height for consistency */
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 leading-relaxed">
 
+    <div class="container mx-auto max-w-4xl p-6 md:p-10">
 
-                                  <br><br>
-          During my Masters, I was a Research Assistant under Professor <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a>  where I  pursued research in generative models and self-supervised learning. One of my projects won the "Best Paper Award at ICLR, 2022".
-                                  I was also a Course Assistant for the couse <a href="http://web.stanford.edu/class/cs330/"> CS 330</a> - "Deep Multi Task and Meta Learning" taught by Professor Chelsea Finn.
-                  <br><br>
-                  Prior to starting my Masters, I was working at Adobe India as Member of Technical Staff-2. I worked on a deep learning based visual search product for clothing based recommendation. This work won the "Best Paper Award" at a CVPR workshop, 2019. I was also involved in several other research based projects during my work.
-                  I did my undergraduation from <a href="http://www.iitkgp.ac.in/">Indian Institute of Tenchnology Kharagpur</a> with a major in Electronics and Electrical Communication Engineering and a minor in Computer Science.
-                 
-                <p align=center>
-<a href="mailto:a7b23@stanford.edu">Email</a> &nbsp/&nbsp
-<a href="https://www.linkedin.com/in/abhisheksinha94/">LinkedIn</a> &nbsp/&nbsp
-<a href="files/resume.pdf">Resume</a> &nbsp/&nbsp
-<a href="https://scholar.google.com/citations?hl=en&user=2llY8lwAAAAJ">Google Scholar</a>
+        <header class="flex flex-col md:flex-row items-center mb-10 md:mb-16">
+            <div class="md:w-2/3 md:pr-10 text-center md:text-left mb-6 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Abhishek Sinha</h1>
+                <p class="mb-3 text-gray-700">
+                    I am currently a Senior Software Engineer at Google DeepMind, working on native Image Generation from Gemini. I was a core contributor to <a href="https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/"class="text-blue-600 hover:text-orange-500 font-medium">launching</a> this feature, enabling text-to-image/editing and interleaved generation capabilities currently available in AI Studio and the Gemini App. Prior to this I was working on MultiModal Post-training of Gemini. I was a core contributor to the <a href="https://arxiv.org/abs/2403.05530" class="text-blue-600 hover:text-orange-500 font-medium"> Gemini 1.5 </a>launch, helping it reach the top of the LMSYS Vision leaderboard.
 
                 </p>
-              </td>
-              <td width="33%"><img class="image-cropper" src="img/photo.jpg"></td>
-            </tr>
-          </table>
-            
-
-           <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tr>
-              <td>
-                <heading style="font-size:22px">Selected Publications</heading>
-              </td>
-            </tr>
-            
-            <tr >
-            
-                    <td width="30%"><img id="img-opt" src="img/h_div.png" alt="project_img" width="160" style="border-style: none">
-                    </td>
-        
-                        <td valign="top" width="70%">
-                        <p><a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=KB5onONJIAU">
-            <papertitle>Comparing Distributions by Measuring Differences that Affect Decision Making</papertitle></a><br>
-                        
-                        <p>Proposed a way to measure the discrepancy between two probability distributions based on optimal decision loss.
-                        <br><br>
-                        Our approach outperformed prior approaches for two-sample tests across different datasets.
-                        <br><br>
-                        The proposed divergence can also be used for feature selection, sample quality evaluation or even studying the effect of climate change.  
-                        <br><br>
-                        <span class="redText"> Best Paper Award at ICLR, 2022 </span>.
-                        </p>
-                        </a> </p>
-                        </td>
-                    </tr>
-
-            <tr >
-            
-                    <td width="30%"><img id="img-opt" src="img/D2C.png" alt="project_img" width="160" style="border-style: none">
-                    </td>
-        
-                        <td valign="top" width="70%">
-                        <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2106.06819">
-            <papertitle>D2C: Diffusion-Denoising Models for Few-shot Conditional Generation</papertitle></a><br>
-                        
-                        <p>Developed a single model that can both learn rich latent representations, and sample images from that latent space.
-                        <br><br>
-                        Added contrastive loss on top of VAE to learn good representations and learnt a strong prior over the latent space of VAE, using diffusion models.
-      <br><br>
-      Our model allows us to perform few shot conditional generation tasks, such as conditional image manipulation with limited examples.
-                        <br><br>
-                        Paper accepted at <span class="redText"> NeurIPS, 2021 </span>.
-                        </p>
-                        </a> </p>
-                        </td>
-                    </tr>
-
-            <tr >
-            
-                    <td width="30%"><img id="img-opt" src="img/NDA.png" alt="project_img" width="160" style="border-style: none">
-                    </td>
-        
-                        <td valign="top" width="70%">
-                        <p><a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=Ovp8dvB8IBH">
-            <papertitle>Negative Data Augmentation</papertitle></a><br>
-                        
-                        <p>Proposed a new GAN training objective to incorporate negative data augmentation.
-                        <br><br>
-                        Obtained significant gain in conditional/unconditional image generation and anomaly detection using the discriminator.
-      <br><br>
-      Incorporated negative augmentations for contrastive learning based approaches for images and videos and achieved gains in linear classification.
-                        <br><br>
-                        Paper accepted at <span class="redText"> ICLR, 2020 </span>.
-      <br><br>
-      <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k">
-            Youtube Video summarizing the paper.
-                        </p>
-                        </a> </p>
-                        </td>
-                    </tr>
-
-            <tr >
-            
-                    <td width="30%"><img id="img-opt" src="img/introspection.png" alt="project_img" width="160" style="border-style: none">
-                    </td>
-        
-                        <td valign="top" width="70%">
-                        <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1704.04959.pdf">
-            <papertitle>Introspection: Accelerating Neural Network Training By Learning Weight Evolution</papertitle></a><br>
-                        
-                        <p>Developed an algorithm to speed up training of deep neural networks by predicting future weight values.
-                        <br><br>
-                        Achieved 20% and 40% improvement in training time for Cifar-10 and ImageNet datasets respectively.
-                        <br><br>
-                        Paper accepted at <span class="redText"> ICLR, 2017 </span>.
-                        </p>
-                        </a> </p>
-                        </td>
-                    </tr>
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/few_shot.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1907.12087.pdf">
-        <papertitle>Charting the Right Manifold: Manifold Mixup for Few-shot Learning</papertitle></a><br>
-                        
-                      <p>Used self-supervision techniques - rotation and exemplar, followed by manifold mixup for few-shot classification tasks.
-                      <br><br>
-                      The proposed approach beats the current state-of-the-art accuracy on mini-ImageNet, CUB and CIFAR-FS datasets by 3-8%.
-                      <br><br>
-            Paper accepted at <span class="redText"> WACV, 2020 </span>.       
-                      </p>
-                      </a> </p>
-                    </td>
-                  </tr>
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/lat.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1905.05186.pdf">
-        <papertitle>Harnessing the Vulnerability of Latent Layers in Adversarially Trained Models</papertitle></a><br>
-                        
-                      <p>Analyzed the adversarial trained models for vulnerability against adversarial perturbations at the latent layers.
-                      <br><br>
-                      The algorithm achieved the state-of-the art adversarial accuracy against strong adversarial attacks.      
-                      <br><br>
-            Paper accepted at <span class="redText"> IJCAI, 2019 </span>.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>    
-
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/language_grounding.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1804.08454.pdf">
-        <papertitle>Attention Based Natural Language Grounding By Navigating Virtual Environment</papertitle></a><br>
-                        
-                      <p>Made a 2D grid environment in which an agent performs tasks on the basis of natural language sentence. Developed a new fusion mechanism for the fusion of visual and textual features to solve the problem.
-                      <br><br>
-                      The proposed methodology outperformed the state-of-the-art in terms of both speed and performance for the 2D as well as a 3D environment.     
-                      <br><br>
-            Paper accepted at <span class="redText"> WACV, 2019 </span>.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>    
-            
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/hybrid_model.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=0GlUoWkRj8">
-        <papertitle>Hybrid Mutual Information Lower-Bound Estimators For Representation Learning </papertitle></a><br>
-                        
-                      <p>Proposed a hybrid model that can be used both as a generative as well as a representation learning model.
-                      <br><br>
-                      Trained auto-encoder with contrastive learning to learn good representations, followed by diffusion model over the latent space to learn a generative model.
-                      <br><br>
-            Paper accepted at <span class="redText"> ICLR 2021 Workshop:  </span>Neural Compression: From Information Theory to Applications.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>
-
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/fashion.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/FFSS-USAD/Chopra_Powering_Robust_Fashion_Retrieval_With_Information_Rich_Feature_Embeddings_CVPRW_2019_paper.pdf">
-        <papertitle>Powering Robust Fashion Retrieval with Information Rich Feature Embeddings</papertitle></a><br>
-                        
-                      <p>Proposed a grid based training of siamese networks, allowing the network to observe mutiplte positive and negative image instances simultaneously.     
-                      <br><br>
-            Best Paper Award at <span class="redText"> CVPR Workshop, 2019 </span>.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>  
-            
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/adversarial.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2005.01499.pdf">
-        <papertitle>On The Benefits Of Models With Perceptually ALigned Gradients</papertitle></a><br>
-                        
-                      <p>Analyzed the models adversarially trained with small perturbation. Such models have interpretable gradients without incurring a significant drop in the performance over clean images.
-                      <br><br>
-                      Used these models for zero-shot transfer and weakly supervised object localization tasks, achieveing significant gains in performance.
-                      <br><br>
-            Paper accepted at <span class="redText"> ICLR 2020 Workshop:  </span>Towards Trustworthy ML.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>
-
-            <tr >
-              <td width="30%"><img id="img-opt" src="img/finegan.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1912.05028.pdf">
-        <papertitle>cFineGAN: Unsupervised multi-conditional fine-grained image generation</papertitle></a><br>
-                        
-                      <p>Proposed a multi-conditional image generation pipeline that generates an image which contains the shape of first input and texture of second input image.
-                      
-                      <br><br>
-            Paper accepted at <span class="redText"> NeurIPS Workshop </span>on Machine Learning for Creativity and Design 3.0, 2019.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>
-
-            <tr>
-              <td width="30%"><img id="img-opt" src="img/custom_kernel.png" alt="project_img" width="160" style="border-style: none">
-                  </td>
-      
-                    <td valign="top" width="70%">
-                      <p><a target="_blank" rel="noopener noreferrer" href="http://delivery.acm.org/10.1145/3330000/3321923/p159-ayush.pdf?ip=128.12.246.27&id=3321923&acc=ACTIVE%20SERVICE&key=AA86BE8B6928DDC7%2E0AF80552DEC4BA76%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&__acm__=1569044029_84099ab16a4d0a6b39df20f43c1e2490">
-        <papertitle>Improving Classification Performance of Support VectorMachines via Guided Custom Kernel Search</papertitle></a><br>
-                        
-                      <p>Used a modification of the neural architecture search to discover a kernel function for SVM over MNIST dataset.   
-                      <br><br>
-            Paper accepted at <span class="redText"> GECCO, 2019 </span>.
-                      </p>
-                       
-                      </a> </p>
-                    </td>
-                  </tr>
-
-            
-            <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-              <tr>
-                <td>
-                  <heading style="font-size:22px">Selected Projects</heading>
-                </td>
-              </tr>
-              <tr >
-                <td width="30%"><img id="img-pgp" src="img/face_analyzer.jpg" alt="project_img" width="160" style="border-style: none">
-                    </td>
-        
-                      <td valign="top" width="70%">
-                        <p><a href="">Face analyzer tool</papertitle></a><br>
-                        
-
-                        <p>Built a face analyzer tool utilizing  deep learning techniques to provide users with an unbiased analysis of their facial appearance.
-                        <br><br>
-                        The project was the <span class="redText">winner of the Microsoft AI Hackathon</span> competition held at IIT Kharagpur.
-                      <!--   <p></p>
-                        <a href="files/report_pgp.pdf">report</a> | <a href="files/slides_pgp.pdf">slides</a>
-                        </a> </p> -->
-                      </td>
-                    </tr>
-
-              <tr >
-                <td width="30%"><img id="img-pgp" src="img/deep_rl_snake.jpg" alt="project_img" width="160" style="border-style: none">
-                    </td>
-        
-                      <td valign="top" width="70%">
-                        <p><a href="">Autonomous snake game using DQN</papertitle></a><br>
-                        
-
-                        <p>Implemented Deep Q learning for the snake game. Built the game in pygame which could be then controlled by a deep learning agent.
-                        </p>
-                      <!--   <p></p>
-                        <a href="files/report_pgp.pdf">report</a> | <a href="files/slides_pgp.pdf">slides</a>
-                        </a> </p> -->
-                    </td>
-              </tr>
-
-
-                      </td>
-                    </tr>
-
-                    
-
-
-            <tr> 
-          <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-            <tr>
-              <td>
-                <br>
-                <p align="right"><font size="2">
-                  <a href="http://www.cs.berkeley.edu/~barron/">Inspired from this website</a>
-                  <!-- <a href="http://www.cs.berkeley.edu/~barron/"> this website</a> -->
-                  </font>
+                <p class="mb-3 text-gray-700">
+                    Before Google, I worked at Waymo in the Perception Team, improving data efficiency for perception models. I graduated with a Master's degree in Computer Science from <a href="https://www.stanford.edu/" class="text-blue-600 hover:text-orange-500 font-medium">Stanford University</a> in 2021.
                 </p>
-              </td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
- <!-- Default Statcounter code for Personal Website
-https://shrep.github.io/ -->
-<script type="text/javascript">
-var sc_project=11673319; 
-var sc_invisible=1; 
-var sc_security="327094c7"; 
-</script>
-<script type="text/javascript"
-src="https://www.statcounter.com/counter/counter.js"
-async></script>
-<noscript><div class="statcounter"><a title="Web Analytics
-Made Easy - StatCounter" href="http://statcounter.com/"
-target="_blank"><img class="statcounter"
-src="//c.statcounter.com/11673319/0/327094c7/1/" alt="Web
-Analytics Made Easy - StatCounter"></a></div></noscript>
-<!-- End of Statcounter Code -->
-  </body>
+                <p class="mb-3 text-gray-700">
+                    During my Masters, I was a Research Assistant under Professor <a href="https://cs.stanford.edu/~ermon/" class="text-blue-600 hover:text-orange-500 font-medium">Stefano Ermon</a>, researching generative models and self-supervised learning. One of my projects won the <span class="highlight-text">Best Paper Award at ICLR, 2022</span>. I was also a Course Assistant for CS 330: "Deep Multi Task and Meta Learning" taught by Professor Chelsea Finn.
+                </p>
+                 <p class="mb-3 text-gray-700">
+                    Prior to my Masters, I worked at Adobe India as a Member of Technical Staff-2 on a deep learning-based visual search product for clothing recommendation. This work won the <span class="highlight-text">Best Paper Award at a CVPR workshop, 2019</span>.
+                 </p>
+                 <p class="mb-3 text-gray-700">
+                    I completed my undergraduate studies at <a href="http://www.iitkgp.ac.in/" class="text-blue-600 hover:text-orange-500 font-medium">Indian Institute of Technology Kharagpur</a>, majoring in Electronics and Electrical Communication Engineering with a minor in Computer Science.
+                 </p>
+                 <p class="mb-3 text-gray-700">
+                    I am interested in Large Vision Language Models, Generative Models, Post-training RL algorithms, self-supervised learning, and active learning.
+                </p>
+                <nav class="mt-6 flex justify-center md:justify-start space-x-4">
+                    <a href="mailto:abhishek.sinha94@gmail.com" class="text-blue-600 hover:text-orange-500 font-medium">Email</a>
+                    <span class="text-gray-400">/</span>
+                    <a href="https://www.linkedin.com/in/abhisheksinha94/" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-orange-500 font-medium">LinkedIn</a>
+                    <span class="text-gray-400">/</span>
+                    <a href="files/resume.pdf" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-orange-500 font-medium">Resume</a>
+                    <span class="text-gray-400">/</span>
+                    <a href="https://scholar.google.com/citations?hl=en&user=2llY8lwAAAAJ" target="_blank" rel="noopener noreferrer" class="text-blue-600 hover:text-orange-500 font-medium">Google Scholar</a>
+                </nav>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+                <img src="img/photo.jpg"
+                     alt="Abhishek Sinha Profile Photo"
+                     class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-white shadow-lg"
+                     onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 256, 256))">
+            </div>
+        </header>
+
+        <section class="mb-10 md:mb-16">
+            <h2 class="section-heading">Selected Publications</h2>
+            <div class="space-y-8">
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/h_div.png" alt="Comparing Distributions Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=KB5onONJIAU">
+                            <h3 class="papertitle mb-2">Comparing Distributions by Measuring Differences that Affect Decision Making</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Proposed a way to measure the discrepancy between two probability distributions based on optimal decision loss. Our approach outperformed prior approaches for two-sample tests across different datasets. The proposed divergence can also be used for feature selection, sample quality evaluation or even studying the effect of climate change.</p>
+                        <p class="mt-2"><span class="highlight-text">Best Paper Award at ICLR, 2022</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                         <img src="img/D2C.png" alt="D2C Project Image" class="card-img"
+                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2106.06819">
+                             <h3 class="papertitle mb-2">D2C: Diffusion-Denoising Models for Few-shot Conditional Generation</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Developed a single model that can both learn rich latent representations, and sample images from that latent space. Added contrastive loss on top of VAE to learn good representations and learnt a strong prior over the latent space of VAE, using diffusion models. Our model allows us to perform few shot conditional generation tasks, such as conditional image manipulation with limited examples.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">NeurIPS, 2021</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                         <img src="img/NDA.png" alt="Negative Data Augmentation Project Image" class="card-img"
+                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=Ovp8dvB8IBH">
+                             <h3 class="papertitle mb-2">Negative Data Augmentation</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Proposed a new GAN training objective to incorporate negative data augmentation. Obtained significant gain in conditional/unconditional image generation and anomaly detection using the discriminator. Incorporated negative augmentations for contrastive learning based approaches for images and videos and achieved gains in linear classification.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR, 2020</span>.</p>
+                        <p class="mt-1"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k" class="text-blue-600 hover:text-orange-500 text-sm">Youtube Video summarizing the paper.</a></p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/introspection.png" alt="Introspection Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1704.04959.pdf">
+                            <h3 class="papertitle mb-2">Introspection: Accelerating Neural Network Training By Learning Weight Evolution</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Developed an algorithm to speed up training of deep neural networks by predicting future weight values. Achieved 20% and 40% improvement in training time for Cifar-10 and ImageNet datasets respectively.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR, 2017</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/few_shot.png" alt="Few-shot Learning Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1907.12087.pdf">
+                            <h3 class="papertitle mb-2">Charting the Right Manifold: Manifold Mixup for Few-shot Learning</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Used self-supervision techniques - rotation and exemplar, followed by manifold mixup for few-shot classification tasks. The proposed approach beats the current state-of-the-art accuracy on mini-ImageNet, CUB and CIFAR-FS datasets by 3-8%.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">WACV, 2020</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/lat.png" alt="Latent Layers Vulnerability Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1905.05186.pdf">
+                            <h3 class="papertitle mb-2">Harnessing the Vulnerability of Latent Layers in Adversarially Trained Models</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Analyzed the adversarial trained models for vulnerability against adversarial perturbations at the latent layers. The algorithm achieved the state-of-the art adversarial accuracy against strong adversarial attacks.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">IJCAI, 2019</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/language_grounding.png" alt="Language Grounding Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1804.08454.pdf">
+                            <h3 class="papertitle mb-2">Attention Based Natural Language Grounding By Navigating Virtual Environment</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Made a 2D grid environment in which an agent performs tasks on the basis of natural language sentence. Developed a new fusion mechanism for the fusion of visual and textual features to solve the problem. The proposed methodology outperformed the state-of-the-art in terms of both speed and performance for the 2D as well as a 3D environment.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">WACV, 2019</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/hybrid_model.png" alt="Hybrid Mutual Information Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=0GlUoWkRj8">
+                            <h3 class="papertitle mb-2">Hybrid Mutual Information Lower-Bound Estimators For Representation Learning</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Proposed a hybrid model that can be used both as a generative as well as a representation learning model. Trained auto-encoder with contrastive learning to learn good representations, followed by diffusion model over the latent space to learn a generative model.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR 2021 Workshop:</span> Neural Compression: From Information Theory to Applications.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/fashion.png" alt="Fashion Retrieval Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/FFSS-USAD/Chopra_Powering_Robust_Fashion_Retrieval_With_Information_Rich_Feature_Embeddings_CVPRW_2019_paper.pdf">
+                            <h3 class="papertitle mb-2">Powering Robust Fashion Retrieval with Information Rich Feature Embeddings</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Proposed a grid based training of siamese networks, allowing the network to observe multiple positive and negative image instances simultaneously.</p>
+                        <p class="mt-2">Best Paper Award at <span class="highlight-text">CVPR Workshop, 2019</span>.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/adversarial.png" alt="Perceptually Aligned Gradients Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2005.01499.pdf">
+                            <h3 class="papertitle mb-2">On The Benefits Of Models With Perceptually ALigned Gradients</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Analyzed the models adversarially trained with small perturbation. Such models have interpretable gradients without incurring a significant drop in the performance over clean images. Used these models for zero-shot transfer and weakly supervised object localization tasks, achieving significant gains in performance.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR 2020 Workshop:</span> Towards Trustworthy ML.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/finegan.png" alt="cFineGAN Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1912.05028.pdf">
+                            <h3 class="papertitle mb-2">cFineGAN: Unsupervised multi-conditional fine-grained image generation</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Proposed a multi-conditional image generation pipeline that generates an image which contains the shape of first input and texture of second input image.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">NeurIPS Workshop</span> on Machine Learning for Creativity and Design 3.0, 2019.</p>
+                    </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                         <img src="img/custom_kernel.png" alt="Custom Kernel SVM Project Image" class="card-img"
+                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <a target="_blank" rel="noopener noreferrer" href="http://delivery.acm.org/10.1145/3330000/3321923/p159-ayush.pdf">
+                             <h3 class="papertitle mb-2">Improving Classification Performance of Support VectorMachines via Guided Custom Kernel Search</h3>
+                        </a>
+                        <p class="text-gray-600 text-sm">Used a modification of the neural architecture search to discover a kernel function for SVM over MNIST dataset.</p>
+                        <p class="mt-2">Paper accepted at <span class="highlight-text">GECCO, 2019</span>.</p>
+                    </div>
+                </article>
+
+            </div> </section>
+
+        <section class="mb-10 md:mb-16">
+            <h2 class="section-heading">Selected Projects</h2>
+            <div class="space-y-8">
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/face_analyzer.jpg" alt="Face Analyzer Tool Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                        <h3 class="papertitle mb-2">Face analyzer tool</h3>
+                        <p class="text-gray-600 text-sm">Built a face analyzer tool utilizing deep learning techniques to provide users with an unbiased analysis of their facial appearance.</p>
+                        <p class="mt-2">The project was the <span class="highlight-text">winner of the Microsoft AI Hackathon</span> competition held at IIT Kharagpur.</p>
+                        </div>
+                </article>
+
+                <article class="flex flex-col md:flex-row bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200">
+                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
+                        <img src="img/deep_rl_snake.jpg" alt="Autonomous Snake Game Project Image" class="card-img"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                    </div>
+                    <div class="md:w-3/4">
+                         <h3 class="papertitle mb-2">Autonomous snake game using DQN</h3>
+                        <p class="text-gray-600 text-sm">Implemented Deep Q learning for the snake game. Built the game in pygame which could be then controlled by a deep learning agent.</p>
+                        </div>
+                </article>
+
+            </div> </section>
+
+        <footer class="text-center mt-10 pt-6 border-t border-gray-300">
+            <p class="text-sm text-gray-500">
+                Made by Gemini 2.5 Pro.
+            </p>
+            <script type="text/javascript">
+            var sc_project=11673319;
+            var sc_invisible=1;
+            var sc_security="327094c7";
+            // Function to create placeholder div
+            function createPlaceholder(altText, width, height) {
+                const div = document.createElement('div');
+                div.className = 'placeholder-img';
+                div.style.width = `${width}px`;
+                div.style.height = `${height}px`;
+                div.textContent = altText || 'Image Placeholder';
+                return div;
+            }
+            </script>
+            <script type="text/javascript"
+            src="https://www.statcounter.com/counter/counter.js"
+            async></script>
+            <noscript><div class="statcounter"><a title="Web Analytics Made Easy - StatCounter" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11673319/0/327094c7/1/" alt="Web Analytics Made Easy - StatCounter"></a></div></noscript>
+            </footer>
+
+    </div> </body>
 </html>
