@@ -4,138 +4,163 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" type="image/jpeg" href="img/logo.jpg">
     <title>Abhishek Sinha</title>
     <style>
         :root {
             /* Light Theme Colors */
-            --bg-color-light: #f9fafb; /* gray-50 */
-            --text-color-light: #1f2937; /* gray-800 */
-            --header-text-light: #111827; /* gray-900 */
+            --bg-color-light: #f8f9fa;
+            --text-color-light: #212529;
+            --header-text-light: #000000;
             --card-bg-light: #ffffff;
-            --link-color-light: #2563eb; /* blue-600 */
-            --link-hover-light: #f59e0b; /* amber-500 */
-            --highlight-color-light: #dc2626; /* red-600 */
-            --border-color-light: #e5e7eb; /* gray-200 */
+            --link-color-light: #007bff;
+            --link-hover-light: #ff4500;
+            --highlight-color-light: #dc3545;
+            --border-color-light: #dee2e6;
 
             /* Dark Theme Colors */
-            --bg-color-dark: #111827; /* gray-900 */
-            --text-color-dark: #d1d5db; /* gray-300 */
-            --header-text-dark: #f9fafb; /* gray-50 */
-            --card-bg-dark: rgba(31, 41, 55, 0.5); /* gray-800 with transparency */
-            --link-color-dark: #60a5fa; /* blue-400 */
-            --link-hover-dark: #f59e0b; /* amber-500 */
-            --highlight-color-dark: #fb923c; /* orange-400 */
-            --border-color-dark: #374151; /* gray-700 */
+            --bg-color-dark: #121212;
+            --text-color-dark: #e0e0e0;
+            --header-text-dark: #ffffff;
+            --card-bg-dark: rgba(255, 255, 255, 0.05);
+            --link-color-dark: #1e90ff;
+            --link-hover-dark: #ff6347;
+            --highlight-color-dark: #ff6b6b;
+            --border-color-dark: #333333;
         }
 
-        /* Use CSS variables for theming */
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: var(--bg-color-light);
             color: var(--text-color-light);
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .dark body {
             background-color: var(--bg-color-dark);
             color: var(--text-color-dark);
         }
-        
-        /* Gradient text for the main header */
+
         .name-gradient {
-            background: -webkit-linear-gradient(45deg, #2563eb, #f59e0b, #dc2626);
+            background: linear-gradient(90deg, #007bff, #ff4500, #dc3545);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-        }
-        
-        .dark .name-gradient {
-             background: -webkit-linear-gradient(45deg, #60a5fa, #f59e0b, #fb923c);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            animation: gradient-flow 5s ease-in-out infinite;
+            background-size: 200% 200%;
         }
 
-        /* Card styles with backdrop filter for a "glass" effect in dark mode */
+        .dark .name-gradient {
+            background: linear-gradient(90deg, #1e90ff, #ff6347, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-flow 5s ease-in-out infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .publication-card {
             background-color: var(--card-bg-light);
             border: 1px solid var(--border-color-light);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        background-color 0.4s ease;
+            border-radius: 12px;
         }
+
         .publication-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
         }
+
         .dark .publication-card {
             background-color: var(--card-bg-dark);
             border: 1px solid var(--border-color-dark);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        .dark .publication-card:hover {
-             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
         }
 
-        /* Section Heading */
-        .section-heading {
-            font-size: 1.75rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            border-bottom: 2px solid var(--border-color-light);
-            padding-bottom: 0.5rem;
-            color: var(--header-text-light);
-            transition: border-color 0.3s ease, color 0.3s ease;
+        .dark .publication-card:hover {
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
         }
+
+        .section-heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            border-bottom: 3px solid var(--border-color-light);
+            padding-bottom: 0.75rem;
+            color: var(--header-text-light);
+            transition: border-color 0.4s ease, color 0.4s ease;
+        }
+
         .dark .section-heading {
             border-color: var(--border-color-dark);
             color: var(--header-text-dark);
         }
-        
-        /* Link styling */
+
         .themed-link {
             color: var(--link-color-light);
-            transition: color 0.2s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
         }
+
         .themed-link:hover {
             color: var(--link-hover-light);
+            transform: scale(1.05);
         }
+
         .dark .themed-link {
             color: var(--link-color-dark);
         }
+
         .dark .themed-link:hover {
             color: var(--link-hover-dark);
         }
-        
-        /* Paper title styling */
+
         .papertitle {
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-weight: 600;
+            font-size: 1.15rem;
             color: var(--link-color-light);
+            transition: color 0.3s ease;
         }
+
         .papertitle:hover {
             color: var(--link-hover-light);
         }
+
         .dark .papertitle {
             color: var(--link-color-dark);
         }
+
         .dark .papertitle:hover {
             color: var(--link-hover-dark);
         }
 
-        /* Highlight text color */
         .highlight-text {
             color: var(--highlight-color-light);
-            font-weight: 600;
+            font-weight: 700;
         }
+
         .dark .highlight-text {
             color: var(--highlight-color-dark);
         }
 
-        /* Profile image with animated border */
         .profile-image-container {
             position: relative;
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
+        
+        .profile-image-container:hover {
+            transform: scale(1.05);
+        }
+
         .profile-image {
             border-radius: 9999px;
             width: 100%;
@@ -143,86 +168,90 @@
             object-fit: cover;
             position: relative;
             z-index: 10;
+            border: 5px solid var(--card-bg-light);
         }
+        
+        .dark .profile-image {
+            border-color: var(--card-bg-dark);
+        }
+
         .profile-image-container::before {
             content: '';
             position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
+            top: -8px;
+            left: -8px;
+            right: -8px;
+            bottom: -8px;
             border-radius: 9999px;
-            background: linear-gradient(45deg, #60a5fa, #f59e0b, #fb923c);
+            background: linear-gradient(45deg, #1e90ff, #ff6347, #ff6b6b);
             z-index: 5;
             transition: transform 0.5s ease-in-out;
-            transform: scale(1.02);
-        }
-        .profile-image-container:hover::before {
-            animation: spin 4s linear infinite;
+            transform: scale(1.03);
+            animation: spin 5s linear infinite;
         }
 
         @keyframes spin {
             from { transform: rotate(0deg) scale(1.05); }
             to { transform: rotate(360deg) scale(1.05); }
         }
-        
-        /* Image placeholder for fallback */
+
         .placeholder-img {
-            background-color: #e5e7eb; /* gray-200 */
-            color: #6b7280; /* gray-500 */
+            background-color: #e9ecef;
+            color: #6c757d;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            font-size: 0.875rem;
-            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            border-radius: 0.75rem;
             width: 200px;
             height: 150px;
         }
+
         .dark .placeholder-img {
-            background-color: #374151; /* gray-700 */
-            color: #9ca3af; /* gray-400 */
+            background-color: #343a40;
+            color: #adb5bd;
         }
-        
-        /* Scroll animations */
+
         .reveal {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            transform: translateY(40px);
+            transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                        transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
-<body class="leading-relaxed">
+<body class="leading-relaxed antialiased">
 
-    <div class="container mx-auto max-w-4xl p-6 md:p-10 relative">
+    <div class="container mx-auto max-w-5xl p-6 md:p-12 relative">
 
-        <button id="theme-toggle" class="absolute top-4 right-4 md:top-6 md:right-6 p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        <button id="theme-toggle" class="absolute top-6 right-6 md:top-8 md:right-8 p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-300 ease-in-out hover:scale-110"
             style="color: var(--text-color-light); background-color: var(--border-color-light);">
-            <i class="fas fa-moon text-lg hidden" id="theme-toggle-dark-icon"></i>
-            <i class="fas fa-sun text-lg" id="theme-toggle-light-icon"></i>
+            <i class="fas fa-moon text-xl hidden" id="theme-toggle-dark-icon"></i>
+            <i class="fas fa-sun text-xl" id="theme-toggle-light-icon"></i>
         </button>
 
-        <header class="flex flex-col md:flex-row items-center mb-10 md:mb-16">
-            <div class="md:w-2/3 md:pr-10 text-center md:text-left mb-6 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 name-gradient">Abhishek Sinha</h1>
-                <p class="mb-3">
-                    I am currently a Senior Software Engineer at Google DeepMind, working on native Image Generation from Gemini. I was a core contributor to <a href="https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/" class="themed-link font-medium">launching</a> this feature, enabling text-to-image, image editing, and interleaved generation capabilities currently available in AI Studio and the Gemini App. 
+        <header class="flex flex-col md:flex-row items-center mb-12 md:mb-20">
+            <div class="md:w-2/3 md:pr-12 text-center md:text-left mb-8 md:mb-0">
+                <h1 class="text-5xl md:text-6xl font-extrabold mb-5 name-gradient">Abhishek Sinha</h1>
+                <p class="mb-4 text-lg">
+                    I am currently a Senior Software Engineer at Google DeepMind, working on native Image Generation from Gemini. I was a core contributor to <a href="https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/" class="themed-link font-semibold">launching</a> this feature, enabling text-to-image, image editing, and interleaved generation capabilities currently available in AI Studio and the Gemini App. 
                 </p>
-                <p class="mb-3">
-                    I also contributed to the launch of <a href="https://arxiv.org/abs/2403.05530" class="themed-link font-medium"> Gemini 1.5 </a> through my work on MultiModal Post-training. Prior to Google, I was at Waymo on the Perception Team, where I enhanced data efficiency for perception models.
-                    <!-- Before this I was working on MultiModal Post-training of Gemini. I was a core contributor to the <a href="https://arxiv.org/abs/2403.05530" class="themed-link font-medium"> Gemini 1.5 </a>launch. Before Google, I worked at Waymo in the Perception Team, where I improved data efficiency for perception models. -->
+                <p class="mb-4 text-lg">
+                    I also contributed to the launch of <a href="https://arxiv.org/abs/2403.05530" class="themed-link font-semibold"> Gemini 1.5 </a> through my work on MultiModal Post-training. Prior to Google, I was at Waymo on the Perception Team, where I enhanced data efficiency for perception models.
                 </p>
-                <p class="mb-3">
-                    I graduated with a Master's degree in Computer Science from <a href="https://www.stanford.edu/" class="themed-link font-medium">Stanford University</a> in 2021. During my Master's, I was a Research Assistant under Professor <a href="https://cs.stanford.edu/~ermon/" class="themed-link font-medium">Stefano Ermon</a>, researching generative models and self-supervised learning. One of my projects won the <span class="highlight-text">Best Paper Award at ICLR, 2022</span>. Prior to my Masters, I worked at Adobe India on a deep learning-based visual search product for clothing recommendation. This work won the <span class="highlight-text">Best Paper Award at a CVPR workshop, 2019</span>.
+                <p class="mb-4 text-lg">
+                    I graduated with a Master's degree in Computer Science from <a href="https://www.stanford.edu/" class="themed-link font-semibold">Stanford University</a> in 2021. During my Master's, I was a Research Assistant under Professor <a href="https://cs.stanford.edu/~ermon/" class="themed-link font-semibold">Stefano Ermon</a>, researching generative models and self-supervised learning. One of my projects won the <span class="highlight-text">Best Paper Award at ICLR, 2022</span>. Prior to my Masters, I worked at Adobe India on a deep learning-based visual search product for clothing recommendation. This work won the <span class="highlight-text">Best Paper Award at a CVPR workshop, 2019</span>.
                 </p>
-                <p class="mb-3">
+                <p class="mb-4 text-lg">
                     I am interested in Large Vision Language Models, Generative Models, Post-training RL algorithms, self-supervised learning, and active learning.
                 </p>
-                <nav class="mt-6 flex justify-center md:justify-start items-center space-x-4 text-lg">
+                <nav class="mt-8 flex justify-center md:justify-start items-center space-x-5 text-xl">
                     <a href="mailto:abhishek.sinha94@gmail.com" class="themed-link font-medium flex items-center space-x-2"><i class="fas fa-envelope"></i><span>Email</span></a>
                     <span class="text-gray-400">/</span>
                     <a href="https://www.linkedin.com/in/abhisheksinha94/" target="_blank" rel="noopener noreferrer" class="themed-link font-medium flex items-center space-x-2"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
@@ -232,214 +261,213 @@
                     <a href="https://scholar.google.com/citations?hl=en&user=2llY8lwAAAAJ" target="_blank" rel="noopener noreferrer" class="themed-link font-medium flex items-center space-x-2 whitespace-nowrap"><i class="fas fa-graduation-cap"></i><span>Google Scholar</span></a>
                 </nav>
             </div>
-            <div class="md:w-1/3 flex justify-center mt-8 md:mt-0">
-                <div class="w-48 h-48 md:w-64 md:h-64 profile-image-container">
+            <div class="md:w-1/3 flex justify-center mt-10 md:mt-0">
+                <div class="w-56 h-56 md:w-72 md:h-72 profile-image-container">
                     <img src="img/photo.jpg"
                          alt="Abhishek Sinha Profile Photo"
                          class="profile-image shadow-2xl"
-                         onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 256, 256))">
+                         onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 288, 288))">
                 </div>
             </div>
         </header>
 
-        <section class="mb-10 md:mb-16">
+        <section class="mb-12 md:mb-20">
             <h2 class="section-heading">Selected Publications</h2>
-            <div class="space-y-8">
-                <!-- Publications articles will be populated by JS or remain static like this -->
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/h_div.png" alt="Comparing Distributions Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/h_div.png" alt="Comparing Distributions Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=KB5onONJIAU">
                             <h3 class="papertitle mb-2">Comparing Distributions by Measuring Differences that Affect Decision Making</h3>
                         </a>
                         <p class="text-sm">Proposed a way to measure the discrepancy between two probability distributions based on optimal decision loss. Our approach outperformed prior approaches for two-sample tests across different datasets. The proposed divergence can also be used for feature selection, sample quality evaluation or even studying the effect of climate change.</p>
-                        <p class="mt-2"><span class="highlight-text">Best Paper Award at ICLR, 2022</span>.</p>
+                        <p class="mt-3"><span class="highlight-text">Best Paper Award at ICLR, 2022</span>.</p>
                     </div>
                 </article>
 
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                         <img src="img/D2C.png" alt="D2C Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                         <img src="img/D2C.png" alt="D2C Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                               onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2106.06819">
                               <h3 class="papertitle mb-2">D2C: Diffusion-Denoising Models for Few-shot Conditional Generation</h3>
                         </a>
                         <p class="text-sm">Developed a single model that can both learn rich latent representations, and sample images from that latent space. Added contrastive loss on top of VAE to learn good representations and learnt a strong prior over the latent space of VAE, using diffusion models. Our model allows us to perform few shot conditional generation tasks, such as conditional image manipulation with limited examples.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">NeurIPS, 2021</span>.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">NeurIPS, 2021</span>.</p>
                     </div>
                 </article>
 
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                         <img src="img/NDA.png" alt="Negative Data Augmentation Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                         <img src="img/NDA.png" alt="Negative Data Augmentation Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                               onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=Ovp8dvB8IBH">
                                <h3 class="papertitle mb-2">Negative Data Augmentation</h3>
                         </a>
                         <p class="text-sm">Proposed a new GAN training objective to incorporate negative data augmentation. Obtained significant gain in conditional/unconditional image generation and anomaly detection using the discriminator. Incorporated negative augmentations for contrastive learning based approaches for images and videos and achieved gains in linear classification.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR, 2020</span>.</p>
-                        <p class="mt-1"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k" class="themed-link text-sm">Youtube Video summarizing the paper.</a></p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR, 2020</span>.</p>
+                        <p class="mt-2"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k" class="themed-link text-sm">Youtube Video summarizing the paper.</a></p>
                     </div>
                 </article>
 
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/introspection.png" alt="Introspection Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/introspection.png" alt="Introspection Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1704.04959.pdf">
                             <h3 class="papertitle mb-2">Introspection: Accelerating Neural Network Training By Learning Weight Evolution</h3>
                         </a>
                         <p class="text-sm">Developed an algorithm to speed up training of deep neural networks by predicting future weight values. Achieved 20% and 40% improvement in training time for Cifar-10 and ImageNet datasets respectively.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR, 2017</span>.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR, 2017</span>.</p>
                     </div>
                 </article>
-
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/few_shot.png" alt="Few-shot Learning Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/few_shot.png" alt="Few-shot Learning Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1907.12087.pdf">
                             <h3 class="papertitle mb-2">Charting the Right Manifold: Manifold Mixup for Few-shot Learning</h3>
                         </a>
                         <p class="text-sm">Used self-supervision techniques - rotation and exemplar, followed by manifold mixup for few-shot classification tasks. The proposed approach beats the current state-of-the-art accuracy on mini-ImageNet, CUB and CIFAR-FS datasets by 3-8%.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">WACV, 2020</span>.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">WACV, 2020</span>.</p>
                     </div>
                 </article>
-                 <!-- ... Other publications ... -->
-                 <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/lat.png" alt="Latent Layers Vulnerability Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                 <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/lat.png" alt="Latent Layers Vulnerability Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1905.05186.pdf">
                             <h3 class="papertitle mb-2">Harnessing the Vulnerability of Latent Layers in Adversarially Trained Models</h3>
                         </a>
                         <p class="text-sm">Analyzed the adversarial trained models for vulnerability against adversarial perturbations at the latent layers. The algorithm achieved the state-of-the art adversarial accuracy against strong adversarial attacks.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">IJCAI, 2019</span>.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">IJCAI, 2019</span>.</p>
                     </div>
                 </article>
-                 <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/language_grounding.png" alt="Language Grounding Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                 <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/language_grounding.png" alt="Language Grounding Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1804.08454.pdf">
                             <h3 class="papertitle mb-2">Attention Based Natural Language Grounding By Navigating Virtual Environment</h3>
                         </a>
                         <p class="text-sm">Made a 2D grid environment in which an agent performs tasks on the basis of natural language sentence. Developed a new fusion mechanism for the fusion of visual and textual features to solve the problem. The proposed methodology outperformed the state-of-the-art in terms of both speed and performance for the 2D as well as a 3D environment.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">WACV, 2019</span>.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">WACV, 2019</span>.</p>
                     </div>
                 </article>
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/hybrid_model.png" alt="Hybrid Mutual Information Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/hybrid_model.png" alt="Hybrid Mutual Information Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=0GlUoWkRj8">
                             <h3 class="papertitle mb-2">Hybrid Mutual Information Lower-Bound Estimators For Representation Learning</h3>
                         </a>
                         <p class="text-sm">Proposed a hybrid model that can be used both as a generative as well as a representation learning model. Trained auto-encoder with contrastive learning to learn good representations, followed by diffusion model over the latent space to learn a generative model.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR 2021 Workshop:</span> Neural Compression: From Information Theory to Applications.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR 2021 Workshop:</span> Neural Compression: From Information Theory to Applications.</p>
                     </div>
                 </article>
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/fashion.png" alt="Fashion Retrieval Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/fashion.png" alt="Fashion Retrieval Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/FFSS-USAD/Chopra_Powering_Robust_Fashion_Retrieval_With_Information_Rich_Feature_Embeddings_CVPRW_2019_paper.pdf">
                             <h3 class="papertitle mb-2">Powering Robust Fashion Retrieval with Information Rich Feature Embeddings</h3>
                         </a>
                         <p class="text-sm">Proposed a grid based training of siamese networks, allowing the network to observe multiple positive and negative image instances simultaneously.</p>
-                        <p class="mt-2">Best Paper Award at <span class="highlight-text">CVPR Workshop, 2019</span>.</p>
+                        <p class="mt-3">Best Paper Award at <span class="highlight-text">CVPR Workshop, 2019</span>.</p>
                     </div>
                 </article>
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/adversarial.png" alt="Perceptually Aligned Gradients Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/adversarial.png" alt="Perceptually Aligned Gradients Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2005.01499.pdf">
                             <h3 class="papertitle mb-2">On The Benefits Of Models With Perceptually ALigned Gradients</h3>
                         </a>
                         <p class="text-sm">Analyzed the models adversarially trained with small perturbation. Such models have interpretable gradients without incurring a significant drop in the performance over clean images. Used these models for zero-shot transfer and weakly supervised object localization tasks, achieving significant gains in performance.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">ICLR 2020 Workshop:</span> Towards Trustworthy ML.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR 2020 Workshop:</span> Towards Trustworthy ML.</p>
                     </div>
                 </article>
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/finegan.png" alt="cFineGAN Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/finegan.png" alt="cFineGAN Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1912.05028.pdf">
                             <h3 class="papertitle mb-2">cFineGAN: Unsupervised multi-conditional fine-grained image generation</h3>
                         </a>
                         <p class="text-sm">Proposed a multi-conditional image generation pipeline that generates an image which contains the shape of first input and texture of second input image.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">NeurIPS Workshop</span> on Machine Learning for Creativity and Design 3.0, 2019.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">NeurIPS Workshop</span> on Machine Learning for Creativity and Design 3.0, 2019.</p>
                     </div>
                 </article>
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                         <img src="img/custom_kernel.png" alt="Custom Kernel SVM Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                         <img src="img/custom_kernel.png" alt="Custom Kernel SVM Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                                onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <a target="_blank" rel="noopener noreferrer" href="http://delivery.acm.org/10.1145/3330000/3321923/p159-ayush.pdf">
                                <h3 class="papertitle mb-2">Improving Classification Performance of Support VectorMachines via Guided Custom Kernel Search</h3>
                         </a>
                         <p class="text-sm">Used a modification of the neural architecture search to discover a kernel function for SVM over MNIST dataset.</p>
-                        <p class="mt-2">Paper accepted at <span class="highlight-text">GECCO, 2019</span>.</p>
+                        <p class="mt-3">Paper accepted at <span class="highlight-text">GECCO, 2019</span>.</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section class="mb-10 md:mb-16 reveal">
+        <section class="mb-12 md:mb-20">
             <h2 class="section-heading">Selected Projects</h2>
-            <div class="space-y-8">
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/face_analyzer.jpg" alt="Face Analyzer Tool Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/face_analyzer.jpg" alt="Face Analyzer Tool Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
                     </div>
-                    <div class="md:w-3/4">
+                    <div>
                         <h3 class="papertitle mb-2">Face analyzer tool</h3>
                         <p class="text-sm">Built a face analyzer tool utilizing deep learning techniques to provide users with an unbiased analysis of their facial appearance.</p>
-                        <p class="mt-2">The project was the <span class="highlight-text">winner of the Microsoft AI Hackathon</span> competition held at IIT Kharagpur.</p>
+                        <p class="mt-3">The project was the <span class="highlight-text">winner of the Microsoft AI Hackathon</span> competition held at IIT Kharagpur.</p>
                     </div>
                 </article>
 
-                <article class="flex flex-col md:flex-row p-4 rounded-lg publication-card">
-                    <div class="md:w-1/4 mb-4 md:mb-0 md:pr-4 flex justify-center md:justify-start">
-                        <img src="img/deep_rl_snake.jpg" alt="Autonomous Snake Game Project Image" class="w-full h-auto max-w-[200px] object-cover rounded-lg"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
+                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
+                    <div class="mb-4">
+                        <img src="img/deep_rl_maze.png" alt="Autonomous Maze Path Finder Project Image" class="w-full h-auto object-cover rounded-lg shadow-md" style="max-width: 250px;"
+                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 250, 250))">
                     </div>
-                    <div class="md:w-3/4">
-                        <h3 class="papertitle mb-2">Autonomous snake game using DQN</h3>
-                        <p class="text-sm">Implemented Deep Q learning for the snake game. Built the game in pygame which could be then controlled by a deep learning agent.</p>
+                    <div>
+                        <a href="https://github.com/a7b23/Autonomous-MazePathFinder-using-DQN" target="_blank" rel="noopener noreferrer">
+                            <h3 class="papertitle mb-2">Autonomous maze path finder using DQN</h3>
+                        </a>
+                        <p class="text-sm">Implemented Deep Q learning for a maze pathfinder. Built the game in pygame which could be then controlled by a deep learning agent to find the optimal path.</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <footer class="text-center mt-10 pt-6 border-t reveal" style="border-color: var(--border-color-light);">
+        <footer class="text-center mt-12 pt-8 border-t reveal" style="border-color: var(--border-color-light);">
             <p class="text-sm">
                 Made by Gemini 2.5 Pro.
             </p>
@@ -503,12 +531,10 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    // Optional: unobserve after revealing to save resources
-                    // observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.1 // Trigger when 10% of the element is visible
+            threshold: 0.15
         });
 
         revealElements.forEach(el => {
