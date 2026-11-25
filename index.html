@@ -1,546 +1,763 @@
 <!DOCTYPE html>
-<html lang="en" class="light">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/jpeg" href="img/logo.jpg">
-    <title>Abhishek Sinha</title>
-    <style>
-        :root {
-            /* Light Theme Colors */
-            --bg-color-light: #f8f9fa;
-            --text-color-light: #212529;
-            --header-text-light: #000000;
-            --card-bg-light: #ffffff;
-            --link-color-light: #007bff;
-            --link-hover-light: #ff4500;
-            --highlight-color-light: #dc3545;
-            --border-color-light: #dee2e6;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Sinha — Staff Software Engineer, Google DeepMind</title>
+  <meta name="description" content="Personal website of Abhishek Sinha — Staff Software Engineer at Google DeepMind working on Gemini post-training and capabilities, core contributor to Gemini Argon, Carbon, Hydrogen, and Neon launches, Stanford CS MS, ICLR 2022 Best Paper Award.">
+  <meta property="og:title" content="Abhishek Sinha — Staff Software Engineer, Google DeepMind">
+  <meta property="og:description" content="Staff Software Engineer at Google DeepMind working on post-training to improve model behavior that affects capabilities across Gemini launches.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23161614'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='%23FAF9F5' font-family='Georgia,serif' font-style='italic' font-size='32' font-weight='600'%3EAS%3C/text%3E%3C/svg%3E">
 
-            /* Dark Theme Colors */
-            --bg-color-dark: #121212;
-            --text-color-dark: #e0e0e0;
-            --header-text-dark: #ffffff;
-            --card-bg-dark: rgba(255, 255, 255, 0.05);
-            --link-color-dark: #1e90ff;
-            --link-hover-dark: #ff6347;
-            --highlight-color-dark: #ff6b6b;
-            --border-color-dark: #333333;
-        }
+  <!-- Fonts: Editorial Serif (Newsreader) + Readable Sans (Inter) + Technical Mono (JetBrains Mono) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;600;700&family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-color-light);
-            color: var(--text-color-light);
-            transition: background-color 0.5s ease, color 0.5s ease;
-        }
+  <link rel="stylesheet" href="styles.css?v=3">
 
-        .dark body {
-            background-color: var(--bg-color-dark);
-            color: var(--text-color-dark);
-        }
-
-        .name-gradient {
-            background: linear-gradient(90deg, #007bff, #ff4500, #dc3545);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-flow 5s ease-in-out infinite;
-            background-size: 200% 200%;
-        }
-
-        .dark .name-gradient {
-            background: linear-gradient(90deg, #1e90ff, #ff6347, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradient-flow 5s ease-in-out infinite;
-            background-size: 200% 200%;
-        }
-
-        @keyframes gradient-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        .publication-card {
-            background-color: var(--card-bg-light);
-            border: 1px solid var(--border-color-light);
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                        box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1),
-                        background-color 0.4s ease;
-            border-radius: 12px;
-        }
-
-        .publication-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-        }
-
-        .dark .publication-card {
-            background-color: var(--card-bg-dark);
-            border: 1px solid var(--border-color-dark);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-        }
-
-        .dark .publication-card:hover {
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
-        }
-
-        .section-heading {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 2rem;
-            border-bottom: 3px solid var(--border-color-light);
-            padding-bottom: 0.75rem;
-            color: var(--header-text-light);
-            transition: border-color 0.4s ease, color 0.4s ease;
-        }
-
-        .dark .section-heading {
-            border-color: var(--border-color-dark);
-            color: var(--header-text-dark);
-        }
-
-        .themed-link {
-            color: var(--link-color-light);
-            transition: color 0.3s ease, transform 0.3s ease;
-            display: inline-block;
-        }
-
-        .themed-link:hover {
-            color: var(--link-hover-light);
-            transform: scale(1.05);
-        }
-
-        .dark .themed-link {
-            color: var(--link-color-dark);
-        }
-
-        .dark .themed-link:hover {
-            color: var(--link-hover-dark);
-        }
-
-        .papertitle {
-            font-weight: 600;
-            font-size: 1.15rem;
-            color: var(--link-color-light);
-            transition: color 0.3s ease;
-        }
-
-        .papertitle:hover {
-            color: var(--link-hover-light);
-        }
-
-        .dark .papertitle {
-            color: var(--link-color-dark);
-        }
-
-        .dark .papertitle:hover {
-            color: var(--link-hover-dark);
-        }
-
-        .highlight-text {
-            color: var(--highlight-color-light);
-            font-weight: 700;
-        }
-
-        .dark .highlight-text {
-            color: var(--highlight-color-dark);
-        }
-
-        .profile-image-container {
-            position: relative;
-            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-        
-        .profile-image-container:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-image {
-            border-radius: 9999px;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            z-index: 10;
-            border: 5px solid var(--card-bg-light);
-        }
-        
-        .dark .profile-image {
-            border-color: var(--card-bg-dark);
-        }
-
-        .profile-image-container::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            border-radius: 9999px;
-            background: linear-gradient(45deg, #1e90ff, #ff6347, #ff6b6b);
-            z-index: 5;
-            transition: transform 0.5s ease-in-out;
-            transform: scale(1.03);
-            animation: spin 5s linear infinite;
-        }
-
-        @keyframes spin {
-            from { transform: rotate(0deg) scale(1.05); }
-            to { transform: rotate(360deg) scale(1.05); }
-        }
-
-        .placeholder-img {
-            background-color: #e9ecef;
-            color: #6c757d;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            font-size: 0.9rem;
-            border-radius: 0.75rem;
-            width: 200px;
-            height: 150px;
-        }
-
-        .dark .placeholder-img {
-            background-color: #343a40;
-            color: #adb5bd;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 1s cubic-bezier(0.25, 0.8, 0.25, 1), 
-                        transform 1s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+  <!-- Prevent theme flash on load -->
+  <script>
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (saved === 'dark' || (!saved && prefersDark)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    })();
+  </script>
 </head>
-<body class="leading-relaxed antialiased">
+<body>
+  <!-- Reading Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-    <div class="container mx-auto p-6 md:p-12 relative">
+  <!-- Sticky Glass Navigation -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#about" class="brand" aria-label="Abhishek Sinha Home">
+        <span class="brand-mark" aria-hidden="true">AS</span>
+        <span>Abhishek Sinha</span>
+      </a>
 
-        <button id="theme-toggle" class="absolute top-6 right-6 md:top-8 md:right-8 p-3 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-transform duration-300 ease-in-out hover:scale-110"
-            style="color: var(--text-color-light); background-color: var(--border-color-light);">
-            <i class="fas fa-moon text-xl hidden" id="theme-toggle-dark-icon"></i>
-            <i class="fas fa-sun text-xl" id="theme-toggle-light-icon"></i>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="#about" class="nav-link active" data-section="about">About</a>
+        <a href="#highlights" class="nav-link" data-section="highlights">Highlights</a>
+        <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+        <a href="#publications" class="nav-link" data-section="publications">Publications</a>
+        <a href="#projects" class="nav-link" data-section="projects">Projects</a>
+        <a href="#honors" class="nav-link" data-section="honors">Honors</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="cmd-trigger" id="open-cmd-btn" aria-label="Open quick search">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+          </svg>
+          <span class="cmd-text">Search</span>
+          <kbd id="cmd-shortcut-hint">⌘K</kbd>
         </button>
 
-        <header class="flex flex-col md:flex-row items-center mb-12 md:mb-20">
-            <div class="md:w-2/3 md:pr-12 text-center md:text-left mb-8 md:mb-0">
-                <h1 class="text-5xl md:text-6xl font-extrabold mb-5 name-gradient">Abhishek Sinha</h1>
-                <p class="mb-4 text-lg">
-                    I am currently a Senior Software Engineer at Google DeepMind, working on Image Generation from Gemini. I was a post-training co-lead and pre-training core-contributor for <a href="https://www.youtube.com/watch?v=hk6gwiZmSWA&t=1789s" class="themed-link font-semibold">nano banana pro</a>. Before this, I was a core contributor to the first native image generation <a href="https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/" class="themed-link font-semibold">launch</a> in Gemini. 
-                </p>
-                <p class="mb-4 text-lg">
-                    I also contributed to the launch of <a href="https://arxiv.org/abs/2403.05530" class="themed-link font-semibold"> Gemini 1.5 </a> and <a href="https://arxiv.org/abs/2507.06261" class="themed-link font-semibold"> Gemini 2.5 </a> through my work on MultiModal Post-training. Prior to Google, I was at Waymo on the Perception Team, where I enhanced data efficiency for perception models.
-                </p>
-                <p class="mb-4 text-lg">
-                    I graduated with a Master's degree in Computer Science from <a href="https://www.stanford.edu/" class="themed-link font-semibold">Stanford University</a> in 2021. During my Master's, I was a Research Assistant under Professor <a href="https://cs.stanford.edu/~ermon/" class="themed-link font-semibold">Stefano Ermon</a>, researching generative models and self-supervised learning. One of my projects won the <a href="https://openreview.net/pdf?id=KB5onONJIAU" class="themed-link font-semibold">Best Paper Award at ICLR, 2022</a>. Prior to my Masters, I worked at Adobe India on a deep learning-based visual search product for clothing recommendation. This work won the <a href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/FFSS-USAD/Chopra_Powering_Robust_Fashion_Retrieval_With_Information_Rich_Feature_Embeddings_CVPRW_2019_paper.pdf" class="themed-link font-semibold">Best Paper Award at a CVPR workshop, 2019</a>.
-                </p>
-                <p class="mb-4 text-lg">
-                    I am interested in Large Vision Language Models, Generative Models, Post-training RL algorithms, self-supervised learning, and active learning.
-                </p>
-                <nav class="mt-8 flex justify-center md:justify-start items-center space-x-5 text-xl">
-                    <a href="mailto:abhishek.sinha94@gmail.com" class="themed-link font-medium flex items-center space-x-2"><i class="fas fa-envelope"></i><span>Email</span></a>
-                    <span class="text-gray-400">/</span>
-                    <a href="https://www.linkedin.com/in/abhisheksinha94/" target="_blank" rel="noopener noreferrer" class="themed-link font-medium flex items-center space-x-2"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a>
-                    <span class="text-gray-400">/</span>
-                    <a href="files/resume.pdf" target="_blank" rel="noopener noreferrer" class="themed-link font-medium flex items-center space-x-2"><i class="fas fa-file-alt"></i><span>Resume</span></a>
-                    <span class="text-gray-400">/</span>
-                    <a href="https://scholar.google.com/citations?hl=en&user=2llY8lwAAAAJ" target="_blank" rel="noopener noreferrer" class="themed-link font-medium flex items-center space-x-2 whitespace-nowrap"><i class="fas fa-graduation-cap"></i><span>Google Scholar</span></a>
-                </nav>
-            </div>
-            <div class="md:w-1/3 flex justify-center mt-10 md:mt-0">
-                <div class="w-56 h-56 md:w-72 md:h-72 profile-image-container">
-                    <img src="img/photo.jpg"
-                         alt="Abhishek Sinha Profile Photo"
-                         class="profile-image shadow-2xl"
-                         onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 288, 288))">
-                </div>
-            </div>
-        </header>
+        <button type="button" class="icon-btn" id="theme-toggle" aria-label="Toggle dark and light theme" title="Toggle theme">
+          <svg class="theme-icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+          <svg class="theme-icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+        </button>
 
-        <section class="mb-12 md:mb-20">
-            <h2 class="section-heading">Selected Publications</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/h_div.png" alt="Comparing Distributions Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=KB5onONJIAU">
-                            <h3 class="papertitle mb-2">Comparing Distributions by Measuring Differences that Affect Decision Making</h3>
-                        </a>
-                        <p class="text-sm">Proposed a way to measure the discrepancy between two probability distributions based on optimal decision loss. Our approach outperformed prior approaches for two-sample tests across different datasets. The proposed divergence can also be used for feature selection, sample quality evaluation or even studying the effect of climate change.</p>
-                        <p class="mt-3"><span class="highlight-text">Best Paper Award at ICLR, 2022</span>.</p>
-                    </div>
-                </article>
+        <button type="button" class="icon-btn mobile-nav-btn" id="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                         <img src="img/D2C.png" alt="D2C Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/abs/2106.06819">
-                              <h3 class="papertitle mb-2">D2C: Diffusion-Denoising Models for Few-shot Conditional Generation</h3>
-                        </a>
-                        <p class="text-sm">Developed a single model that can both learn rich latent representations, and sample images from that latent space. Added contrastive loss on top of VAE to learn good representations and learnt a strong prior over the latent space of VAE, using diffusion models. Our model allows us to perform few shot conditional generation tasks, such as conditional image manipulation with limited examples.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">NeurIPS, 2021</span>.</p>
-                    </div>
-                </article>
+  <!-- Mobile Navigation Drawer -->
+  <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation">
+    <a href="#about" class="nav-link" data-mobile-link>About</a>
+    <a href="#highlights" class="nav-link" data-mobile-link>Highlights</a>
+    <a href="#experience" class="nav-link" data-mobile-link>Experience</a>
+    <a href="#publications" class="nav-link" data-mobile-link>Publications</a>
+    <a href="#projects" class="nav-link" data-mobile-link>Projects</a>
+    <a href="#honors" class="nav-link" data-mobile-link>Honors &amp; Service</a>
+  </nav>
 
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                         <img src="img/NDA.png" alt="Negative Data Augmentation Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                              onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=Ovp8dvB8IBH">
-                               <h3 class="papertitle mb-2">Negative Data Augmentation</h3>
-                        </a>
-                        <p class="text-sm">Proposed a new GAN training objective to incorporate negative data augmentation. Obtained significant gain in conditional/unconditional image generation and anomaly detection using the discriminator. Incorporated negative augmentations for contrastive learning based approaches for images and videos and achieved gains in linear classification.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR, 2020</span>.</p>
-                        <p class="mt-2"><a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/watch?v=K-1mN2mz66k" class="themed-link text-sm">Youtube Video summarizing the paper.</a></p>
-                    </div>
-                </article>
+  <main>
+    <!-- ===================================================================
+         HERO SECTION
+         =================================================================== -->
+    <section id="about" class="hero-section">
+      <div class="hero-canvas-wrap" aria-hidden="true">
+        <canvas id="latent-canvas"></canvas>
+      </div>
 
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/introspection.png" alt="Introspection Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1704.04959.pdf">
-                            <h3 class="papertitle mb-2">Introspection: Accelerating Neural Network Training By Learning Weight Evolution</h3>
-                        </a>
-                        <p class="text-sm">Developed an algorithm to speed up training of deep neural networks by predicting future weight values. Achieved 20% and 40% improvement in training time for Cifar-10 and ImageNet datasets respectively.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR, 2017</span>.</p>
-                    </div>
-                </article>
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/few_shot.png" alt="Few-shot Learning Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1907.12087.pdf">
-                            <h3 class="papertitle mb-2">Charting the Right Manifold: Manifold Mixup for Few-shot Learning</h3>
-                        </a>
-                        <p class="text-sm">Used self-supervision techniques - rotation and exemplar, followed by manifold mixup for few-shot classification tasks. The proposed approach beats the current state-of-the-art accuracy on mini-ImageNet, CUB and CIFAR-FS datasets by 3-8%.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">WACV, 2020</span>.</p>
-                    </div>
-                </article>
-                 <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/lat.png" alt="Latent Layers Vulnerability Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1905.05186.pdf">
-                            <h3 class="papertitle mb-2">Harnessing the Vulnerability of Latent Layers in Adversarially Trained Models</h3>
-                        </a>
-                        <p class="text-sm">Analyzed the adversarial trained models for vulnerability against adversarial perturbations at the latent layers. The algorithm achieved the state-of-the art adversarial accuracy against strong adversarial attacks.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">IJCAI, 2019</span>.</p>
-                    </div>
-                </article>
-                 <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/language_grounding.png" alt="Language Grounding Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1804.08454.pdf">
-                            <h3 class="papertitle mb-2">Attention Based Natural Language Grounding By Navigating Virtual Environment</h3>
-                        </a>
-                        <p class="text-sm">Made a 2D grid environment in which an agent performs tasks on the basis of natural language sentence. Developed a new fusion mechanism for the fusion of visual and textual features to solve the problem. The proposed methodology outperformed the state-of-the-art in terms of both speed and performance for the 2D as well as a 3D environment.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">WACV, 2019</span>.</p>
-                    </div>
-                </article>
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/hybrid_model.png" alt="Hybrid Mutual Information Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://openreview.net/pdf?id=0GlUoWkRj8">
-                            <h3 class="papertitle mb-2">Hybrid Mutual Information Lower-Bound Estimators For Representation Learning</h3>
-                        </a>
-                        <p class="text-sm">Proposed a hybrid model that can be used both as a generative as well as a representation learning model. Trained auto-encoder with contrastive learning to learn good representations, followed by diffusion model over the latent space to learn a generative model.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR 2021 Workshop:</span> Neural Compression: From Information Theory to Applications.</p>
-                    </div>
-                </article>
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/fashion.png" alt="Fashion Retrieval Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="http://openaccess.thecvf.com/content_CVPRW_2019/papers/FFSS-USAD/Chopra_Powering_Robust_Fashion_Retrieval_With_Information_Rich_Feature_Embeddings_CVPRW_2019_paper.pdf">
-                            <h3 class="papertitle mb-2">Powering Robust Fashion Retrieval with Information Rich Feature Embeddings</h3>
-                        </a>
-                        <p class="text-sm">Proposed a grid based training of siamese networks, allowing the network to observe multiple positive and negative image instances simultaneously.</p>
-                        <p class="mt-3">Best Paper Award at <span class="highlight-text">CVPR Workshop, 2019</span>.</p>
-                    </div>
-                </article>
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/adversarial.png" alt="Perceptually Aligned Gradients Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/2005.01499.pdf">
-                            <h3 class="papertitle mb-2">On The Benefits Of Models With Perceptually ALigned Gradients</h3>
-                        </a>
-                        <p class="text-sm">Analyzed the models adversarially trained with small perturbation. Such models have interpretable gradients without incurring a significant drop in the performance over clean images. Used these models for zero-shot transfer and weakly supervised object localization tasks, achieving significant gains in performance.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">ICLR 2020 Workshop:</span> Towards Trustworthy ML.</p>
-                    </div>
-                </article>
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/finegan.png" alt="cFineGAN Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="https://arxiv.org/pdf/1912.05028.pdf">
-                            <h3 class="papertitle mb-2">cFineGAN: Unsupervised multi-conditional fine-grained image generation</h3>
-                        </a>
-                        <p class="text-sm">Proposed a multi-conditional image generation pipeline that generates an image which contains the shape of first input and texture of second input image.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">NeurIPS Workshop</span> on Machine Learning for Creativity and Design 3.0, 2019.</p>
-                    </div>
-                </article>
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                         <img src="img/custom_kernel.png" alt="Custom Kernel SVM Project Image" class="w-full h-auto object-cover rounded-lg shadow-md"
-                               onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <a target="_blank" rel="noopener noreferrer" href="http://delivery.acm.org/10.1145/3330000/3321923/p159-ayush.pdf">
-                               <h3 class="papertitle mb-2">Improving Classification Performance of Support VectorMachines via Guided Custom Kernel Search</h3>
-                        </a>
-                        <p class="text-sm">Used a modification of the neural architecture search to discover a kernel function for SVM over MNIST dataset.</p>
-                        <p class="mt-3">Paper accepted at <span class="highlight-text">GECCO, 2019</span>.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span>Staff Software Engineer · Google DeepMind · Sunnyvale, CA</span>
+          </div>
 
-        <section class="mb-12 md:mb-20">
-            <h2 class="section-heading">Selected Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/face_analyzer.jpg" alt="Face Analyzer Tool Project Image" class="w-full h-auto object-cover rounded-lg shadow-md" style="max-width: 400px;"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 200, 150))">
-                    </div>
-                    <div>
-                        <h3 class="papertitle mb-2">Face analyzer tool</h3>
-                        <p class="text-sm">Built a face analyzer tool utilizing deep learning techniques to provide users with an unbiased analysis of their facial appearance.</p>
-                        <p class="mt-3">The project was the <span class="highlight-text">winner of the Microsoft AI Hackathon</span> competition held at IIT Kharagpur.</p>
-                    </div>
-                </article>
+          <h1 class="hero-title">Abhishek Sinha</h1>
 
-                <article class="flex flex-col p-5 rounded-lg publication-card reveal">
-                    <div class="mb-4">
-                        <img src="img/deep_rl_maze.png" alt="Autonomous Maze Path Finder Project Image" class="w-full h-auto object-cover rounded-lg shadow-md" style="max-width: 250px;"
-                             onerror="this.onerror=null; this.replaceWith(createPlaceholder(this.alt, 250, 250))">
-                    </div>
-                    <div>
-                        <a href="https://github.com/a7b23/Autonomous-MazePathFinder-using-DQN" target="_blank" rel="noopener noreferrer">
-                            <h3 class="papertitle mb-2">Autonomous maze path finder using DQN</h3>
-                        </a>
-                        <p class="text-sm">Implemented Deep Q learning for a maze pathfinder. Built the game in pygame which could be then controlled by a deep learning agent to find the optimal path.</p>
-                    </div>
-                </article>
-            </div>
-        </section>
+          <p class="hero-lead">
+            Working on <em>post-training</em> at Google DeepMind to improve model behavior that affects frontier capabilities across Gemini.
+          </p>
 
-        <footer class="text-center mt-12 pt-8 border-t reveal" style="border-color: var(--border-color-light);">
-            <p class="text-sm">
-                Made by Gemini 2.5 Pro.
+          <div class="hero-bio">
+            <p>
+              I am currently a <strong>Staff Software Engineer</strong> at <strong>Google DeepMind</strong>, working on post-training to improve model behavior that affects capabilities. I was a core contributor to the Gemini <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer" class="prose-link">Argon</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-our-next-frontier-model/" target="_blank" rel="noopener noreferrer" class="prose-link">Carbon</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/" target="_blank" rel="noopener noreferrer" class="prose-link">Hydrogen</a>, and <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" rel="noopener noreferrer" class="prose-link">Neon</a> launches. Previously, I worked on Image Generation in Gemini — serving as post-training co-lead and pre-training core contributor for <a href="https://blog.google/technology/ai/nano-banana-pro/" target="_blank" rel="noopener noreferrer" class="prose-link">Nano Banana Pro</a> (<a href="https://www.youtube.com/watch?v=hk6gwiZmSWA&t=1789s" target="_blank" rel="noopener noreferrer" class="prose-link">keynote</a>), and core contributor to Nano Banana, Imagen 4, and the <a href="https://developers.googleblog.com/en/experiment-with-gemini-20-flash-native-image-generation/" target="_blank" rel="noopener noreferrer" class="prose-link">first native image generation launch</a> in Gemini. Earlier, I also contributed to <a href="https://arxiv.org/abs/2403.05530" target="_blank" rel="noopener noreferrer" class="prose-link">Gemini 1.5</a> and <a href="https://arxiv.org/abs/2507.06261" target="_blank" rel="noopener noreferrer" class="prose-link">Gemini 2.5</a> through Multimodal Post-training.
             </p>
-            <script type="text/javascript">
-            var sc_project=11673319;
-            var sc_invisible=1;
-            var sc_security="327094c7";
-            </script>
-            <script type="text/javascript"
-            src="https://www.statcounter.com/counter/counter.js"
-            async></script>
-            <noscript><div class="statcounter"><a title="Web Analytics Made Easy - StatCounter" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11673319/0/327094c7/1/" alt="Web Analytics Made Easy - StatCounter"></a></div></noscript>
-        </footer>
+            <p>
+              Prior to DeepMind, I worked on the Perception Team at <strong>Waymo</strong> improving data efficiency and fine-tuning LVLMs for autonomous driving. I hold an MS in Computer Science from <a href="https://www.stanford.edu/" target="_blank" rel="noopener noreferrer" class="prose-link">Stanford University</a> (2021), where I was a Research Assistant with Prof. <a href="https://cs.stanford.edu/~ermon/" target="_blank" rel="noopener noreferrer" class="prose-link">Stefano Ermon</a> — developing one of the earliest latent diffusion models and winning the <a href="https://openreview.net/pdf?id=KB5onONJIAU" target="_blank" rel="noopener noreferrer" class="prose-link">ICLR 2022 Best Paper Award</a>. Before Stanford, I built deep visual search systems at <strong>Adobe India</strong> (<a href="https://openaccess.thecvf.com/content_CVPRW_2019/papers/FFSS-USAD/Chopra_Powering_Robust_Fashion_Retrieval_With_Information_Rich_Feature_Embeddings_CVPRW_2019_paper.pdf" target="_blank" rel="noopener noreferrer" class="prose-link">CVPR Workshop 2019 Best Paper</a>) after graduating from <a href="https://www.iitkgp.ac.in/" target="_blank" rel="noopener noreferrer" class="prose-link">IIT Kharagpur</a>.
+            </p>
+          </div>
 
+          <!-- Interactive Research Interests: clicking filters & jumps to Publications -->
+          <div class="interest-row" aria-label="Research interests — click to filter publications">
+            <span class="interest-label">Focus</span>
+            <button type="button" class="interest-chip" data-jump-topic="multimodal">LLM Post-training</button>
+            <button type="button" class="interest-chip" data-jump-topic="generative">Generative Models</button>
+            <button type="button" class="interest-chip" data-jump-topic="multimodal">Multimodal &amp; LVLMs</button>
+            <button type="button" class="interest-chip" data-jump-topic="representation">Self-Supervised &amp; Few-Shot</button>
+            <button type="button" class="interest-chip" data-jump-topic="robustness">Robustness &amp; Optimization</button>
+            <button type="button" class="interest-chip" data-jump-topic="awards">Best Papers</button>
+          </div>
+
+          <div class="hero-actions">
+            <button type="button" class="btn btn-primary" id="open-resume-btn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/>
+              </svg>
+              <span>Resume</span>
+            </button>
+
+            <a href="https://scholar.google.com/citations?hl=en&user=2llY8lwAAAAJ" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+              </svg>
+              <span>Google Scholar</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/abhisheksinha94/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="https://github.com/a7b23" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              <span>GitHub</span>
+            </a>
+
+            <button type="button" class="btn btn-secondary" id="copy-email-btn" title="Copy abhishek.sinha94@gmail.com">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              <span id="copy-email-label">Copy Email</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Portrait Card -->
+        <aside class="portrait-card" aria-label="Portrait of Abhishek Sinha">
+          <div class="portrait-frame">
+            <img src="img/photo.jpg" alt="Portrait of Abhishek Sinha" class="portrait-img" loading="eager">
+          </div>
+        </aside>
+      </div>
+
+      <!-- Interactive Latent Diffusion Field Controls -->
+      <div class="canvas-controls">
+        <span class="canvas-status" id="canvas-status">Latent Field · Hover or Denoise</span>
+        <button type="button" class="canvas-pill accent" id="canvas-denoise-btn" title="Inject Gaussian noise then run reverse diffusion denoising onto the latent manifold">
+          <span>✦ Denoise field</span>
+        </button>
+        <button type="button" class="canvas-pill" id="canvas-pause-btn" aria-pressed="false" title="Pause or resume background particle field">
+          <span id="canvas-pause-label">Pause</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         FRONTIER HIGHLIGHTS
+         =================================================================== -->
+    <section id="highlights" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Selected Impact</span>
+            <h2 class="section-title">Frontier Launches &amp; Landmark Research</h2>
+          </div>
+        </div>
+
+        <div class="highlights-grid">
+          <article class="highlight-card reveal">
+            <div>
+              <div class="highlight-kicker">
+                <span>Google DeepMind · Current</span>
+                <span class="highlight-role">Core Contributor</span>
+              </div>
+              <h3>Gemini Post-Training &amp; Frontier Launches</h3>
+              <p>
+                Working on post-training to improve model behavior that affects core capabilities. Core contributor to the Gemini <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer" class="prose-link">Argon</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-our-next-frontier-model/" target="_blank" rel="noopener noreferrer" class="prose-link">Carbon</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/" target="_blank" rel="noopener noreferrer" class="prose-link">Hydrogen</a>, and <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" rel="noopener noreferrer" class="prose-link">Neon</a> launches, building on earlier multimodal post-training for Gemini 1.5 and Gemini 2.5.
+              </p>
+            </div>
+            <div class="highlight-links">
+              <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" rel="noopener noreferrer" class="inline-action-link">Gemini 4 Neon Launch Blog ↗</a>
+            </div>
+          </article>
+
+          <article class="highlight-card reveal">
+            <div>
+              <div class="highlight-kicker">
+                <span>Google DeepMind · Image Gen</span>
+                <span class="highlight-role">Post-training Co-Lead</span>
+              </div>
+              <h3>Nano Banana Pro &amp; Native Image Generation</h3>
+              <p>
+                Post-training co-lead and pre-training core contributor for Nano Banana Pro. Core contributor to Nano Banana, Imagen 4, and Gemini's inaugural native text-to-image, image editing, and interleaved generation launch.
+              </p>
+            </div>
+            <div class="highlight-links">
+              <a href="https://blog.google/technology/ai/nano-banana-pro/" target="_blank" rel="noopener noreferrer" class="inline-action-link">Nano Banana Pro Blog ↗</a>
+              <a href="https://www.youtube.com/watch?v=hk6gwiZmSWA&t=1789s" target="_blank" rel="noopener noreferrer" class="inline-action-link">Launch Keynote ↗</a>
+            </div>
+          </article>
+
+          <article class="highlight-card reveal">
+            <div>
+              <div class="highlight-kicker">
+                <span>Stanford University · 2021–2022</span>
+                <span class="highlight-role award">★ ICLR Best Paper</span>
+              </div>
+              <h3>H-Divergence &amp; Latent Diffusion (D2C)</h3>
+              <p>
+                Joint first author on decision-theoretic distribution divergence (<em>Best Paper Award, ICLR 2022</em>) and D2C (<em>NeurIPS 2021</em>), one of the earliest latent diffusion frameworks uniting contrastive VAEs with diffusion priors.
+              </p>
+            </div>
+            <div class="highlight-links">
+              <a href="https://openreview.net/pdf?id=KB5onONJIAU" target="_blank" rel="noopener noreferrer" class="inline-action-link">H-Divergence PDF ↗</a>
+              <a href="https://d2c-model.github.io/" target="_blank" rel="noopener noreferrer" class="inline-action-link">D2C Project ↗</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         EXPERIENCE & EDUCATION TIMELINE
+         =================================================================== -->
+    <section id="experience" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Trajectory</span>
+            <h2 class="section-title">Experience &amp; Education</h2>
+          </div>
+
+          <div class="section-header-actions">
+            <div class="pill-group hide-when-collapsed" role="tablist" aria-label="Filter experience timeline">
+              <button type="button" class="filter-pill active" data-exp-filter="all" role="tab" aria-selected="true">All <span class="pill-count">5</span></button>
+              <button type="button" class="filter-pill" data-exp-filter="industry" role="tab" aria-selected="false">Industry <span class="pill-count">3</span></button>
+              <button type="button" class="filter-pill" data-exp-filter="academia" role="tab" aria-selected="false">Education &amp; Research <span class="pill-count">2</span></button>
+            </div>
+            <button type="button" class="section-collapse-btn" data-collapse-section="experience" aria-expanded="true" aria-controls="experience-body">
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+              <span data-collapse-label>Collapse</span>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="collapsed-banner" data-expand-section="experience">
+          <span><strong>5 entries collapsed</strong> · Google DeepMind, Waymo, Stanford University, Adobe India, IIT Kharagpur</span>
+          <span class="collapsed-banner-cta">Expand ▾</span>
+        </button>
+
+        <div class="collapsible-body" id="experience-body">
+          <div class="collapsible-inner">
+            <div class="timeline" id="experience-timeline">
+          <article class="timeline-item current reveal" data-exp-type="industry">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <h3 class="timeline-org">Google DeepMind <span class="timeline-role">· Staff Software Engineer</span></h3>
+                <span class="timeline-date">Feb 2024 – Present</span>
+              </div>
+              <div class="timeline-location">Sunnyvale, CA</div>
+              <ul class="timeline-bullets">
+                <li>Working on post-training to improve model behavior that affects frontier model capabilities; core contributor to the Gemini <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" target="_blank" rel="noopener noreferrer" class="prose-link">Argon</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-carbon-our-next-frontier-model/" target="_blank" rel="noopener noreferrer" class="prose-link">Carbon</a>, <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/" target="_blank" rel="noopener noreferrer" class="prose-link">Hydrogen</a>, and <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-neon/" target="_blank" rel="noopener noreferrer" class="prose-link">Neon</a> launches.</li>
+                <li>Post-training co-lead and pre-training core contributor for <strong>Nano Banana Pro</strong>.</li>
+                <li>Core contributor for the <strong>Nano Banana</strong>, <strong>Imagen 4</strong>, and initial Gemini native image generation launches — led Gemini integration and post-training.</li>
+                <li>Core contributor to multimodal image understanding post-training for <strong>Gemini 1.5</strong> and <strong>Gemini 2.5</strong>.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="mini-tag">Post-training &amp; Capabilities</span>
+                <span class="mini-tag">Gemini Argon / Carbon / Hydrogen / Neon</span>
+                <span class="mini-tag">Native Image Gen</span>
+                <span class="mini-tag">RL &amp; Alignment</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" data-exp-type="industry">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <h3 class="timeline-org">Waymo <span class="timeline-role">· Software Engineer, Perception</span></h3>
+                <span class="timeline-date">Jun 2021 – Feb 2024</span>
+              </div>
+              <div class="timeline-location">Mountain View, CA (also Perception R&amp;D Intern, Summer 2020)</div>
+              <ul class="timeline-bullets">
+                <li>Led fine-tuning of Large Vision-Language Models (LVLMs) for the autonomous driving domain.</li>
+                <li>Delivered large data-efficiency improvements across perception models using active learning; researched active learning for 3D vehicle &amp; pedestrian detection on the Waymo Open Dataset during internship.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="mini-tag award">★ Waymo Cheetah Award</span>
+                <span class="mini-tag">LVLMs for Driving</span>
+                <span class="mini-tag">Active Learning</span>
+                <span class="mini-tag">3D Perception</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" data-exp-type="academia">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <h3 class="timeline-org">Stanford University <span class="timeline-role">· MS in Computer Science</span></h3>
+                <span class="timeline-date">Sep 2019 – Jun 2021</span>
+              </div>
+              <div class="timeline-location">Stanford, CA · GPA 4.13 / 4.0</div>
+              <ul class="timeline-bullets">
+                <li>Research Assistant under <strong>Prof. Stefano Ermon</strong> (Jan 2020 – Jun 2021): developed one of the first latent diffusion models (D2C) and designed novel objectives for generative modeling, distribution testing, and self-supervised learning.</li>
+                <li>Course Assistant for <strong>CS 330</strong> (<em>Deep Multi-Task and Meta-Learning</em>, Prof. Chelsea Finn).</li>
+                <li>Coursework: CS 221, CS 231N, CS 236 (Deep Generative Models), CS 234 (RL), CS 224N (NLP), CS 271.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="mini-tag award">★ ICLR 2022 Best Paper</span>
+                <span class="mini-tag">Latent Diffusion</span>
+                <span class="mini-tag">CS 330 CA</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" data-exp-type="industry">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <h3 class="timeline-org">Adobe India <span class="timeline-role">· Member of Technical Staff-2</span></h3>
+                <span class="timeline-date">Jun 2017 – Aug 2019</span>
+              </div>
+              <div class="timeline-location">Noida, India</div>
+              <ul class="timeline-bullets">
+                <li>Built a deep learning-based visual search product for apparel recommendation; published at CVPR Workshop 2019 (Best Paper Award).</li>
+                <li>Conducted applied ML research across few-shot learning, adversarial robustness, language grounding, and fine-grained image synthesis (showcased on stage at Adobe MAX).</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="mini-tag award">★ CVPRW '19 Best Paper</span>
+                <span class="mini-tag award">★ Young Engineer Award</span>
+                <span class="mini-tag">Adobe MAX Stage</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="timeline-item reveal" data-exp-type="academia">
+            <span class="timeline-node" aria-hidden="true"></span>
+            <div class="timeline-card">
+              <div class="timeline-top">
+                <h3 class="timeline-org">IIT Kharagpur <span class="timeline-role">· B.Tech in E&amp;ECE, Minor in Computer Science</span></h3>
+                <span class="timeline-date">2013 – 2017</span>
+              </div>
+              <div class="timeline-location">Kharagpur, India · GPA 9.63 / 10.0 (CS Minor: 9.8 / 10.0)</div>
+              <ul class="timeline-bullets">
+                <li>Published first-author paper at ICLR 2017 on accelerating deep neural network training via weight evolution prediction.</li>
+                <li>Winner of the Microsoft AI Hackathon held at IIT Kharagpur.</li>
+              </ul>
+              <div class="timeline-tags">
+                <span class="mini-tag">GPA 9.63 / 10</span>
+                <span class="mini-tag">CS Minor 9.8 / 10</span>
+                <span class="mini-tag award">★ Microsoft AI Hackathon Winner</span>
+              </div>
+            </div>
+          </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SELECTED PUBLICATIONS (INTERACTIVE EXPLORER)
+         =================================================================== -->
+    <section id="publications" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Research Archive</span>
+            <h2 class="section-title">Selected Publications</h2>
+            <p class="section-subtitle hide-when-collapsed">
+              Click any figure to inspect full-size, filter by research theme, or copy BibTeX citations directly.
+            </p>
+          </div>
+
+          <div class="section-header-actions">
+            <button type="button" class="section-collapse-btn" data-collapse-section="publications" aria-expanded="true" aria-controls="publications-body">
+              <svg class="chevron-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+              <span data-collapse-label>Collapse</span>
+            </button>
+          </div>
+        </div>
+
+        <button type="button" class="collapsed-banner" data-expand-section="publications">
+          <span><strong>14 publications collapsed</strong> · Gemini 2.5 &amp; 1.5, ICLR Best Paper, NeurIPS (D2C), CVPRW Best Paper &amp; more</span>
+          <span class="collapsed-banner-cta">Expand ▾</span>
+        </button>
+
+        <div class="collapsible-body" id="publications-body">
+          <div class="collapsible-inner">
+            <!-- Filter, Search & View Controls -->
+        <div class="pub-controls reveal">
+          <div class="pub-controls-top">
+            <div class="search-wrap">
+              <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <input type="search" id="pub-search" class="search-input" placeholder="Search title, venue, co-author, or topic…" aria-label="Search publications">
+              <button type="button" id="pub-search-clear" class="search-clear" aria-label="Clear search">✕</button>
+            </div>
+
+            <div class="pub-view-actions">
+              <div class="segmented" role="group" aria-label="Sort publications">
+                <button type="button" class="seg-btn active" data-sort="featured">Featured</button>
+                <button type="button" class="seg-btn" data-sort="newest">Newest</button>
+              </div>
+              <div class="segmented" role="group" aria-label="Layout mode">
+                <button type="button" class="seg-btn active" data-view="list" aria-label="Editorial list view" title="Editorial List View">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+                  </svg>
+                  <span>List</span>
+                </button>
+                <button type="button" class="seg-btn" data-view="grid" aria-label="Visual grid view" title="Visual Grid View">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/>
+                  </svg>
+                  <span>Grid</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="pill-group" id="pub-topic-pills" role="tablist" aria-label="Filter publications by topic">
+            <!-- Populated dynamically with accurate counts -->
+          </div>
+        </div>
+
+        <div class="pub-status-row">
+          <span id="pub-count-label">Showing 14 of 14 publications</span>
+          <span id="pub-active-filter-hint"></span>
+        </div>
+
+        <div class="pub-list" id="publications-container">
+          <!-- Rendered by app.js -->
+        </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         SELECTED PROJECTS (+ INTERACTIVE DQN MAZE PLAYGROUND)
+         =================================================================== -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Experiments &amp; Builds</span>
+            <h2 class="section-title">Selected Projects</h2>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Autonomous Maze Path Finder using DQN -->
+          <article class="project-card reveal">
+            <div class="project-media contain-img" data-lightbox-img="img/deep_rl_maze.png" data-lightbox-title="Autonomous Maze Path Finder using DQN" data-lightbox-caption="Deep Q-Learning agent trained in a custom Pygame maze environment to discover optimal obstacle-free paths.">
+              <img src="img/deep_rl_maze.png" alt="Autonomous Maze Path Finder DQN Grid Visualization" loading="lazy">
+            </div>
+            <div class="project-content">
+              <div class="pub-badges">
+                <span class="venue-badge">Reinforcement Learning</span>
+                <span class="role-badge">Pygame · DQN</span>
+              </div>
+              <h3>Autonomous Maze Path Finder using DQN</h3>
+              <p>
+                Implemented Deep Q-Learning for autonomous maze navigation. Built an interactive Pygame environment where an RL agent learns state-action value estimates to find optimal shortest paths around obstacles.
+              </p>
+
+              <div class="pub-actions">
+                <a href="https://github.com/a7b23/Autonomous-MazePathFinder-using-DQN" target="_blank" rel="noopener noreferrer" class="pub-action-btn primary">
+                  <span>GitHub Repository ↗</span>
+                </a>
+                <button type="button" class="pub-action-btn" id="toggle-dqn-sandbox" aria-expanded="false" aria-controls="dqn-sandbox">
+                  <span>▶ Try Interactive Q-Maze</span>
+                </button>
+              </div>
+
+              <!-- Interactive Mini Q-Value Maze Playground -->
+              <div class="dqn-sandbox" id="dqn-sandbox">
+                <div class="dqn-toolbar">
+                  <button type="button" class="dqn-play-btn" id="dqn-run-btn">
+                    <span id="dqn-run-label">▶ Play Q-Agent</span>
+                  </button>
+                  <div class="dqn-secondary-group">
+                    <button type="button" class="pub-action-btn" id="dqn-manual-btn" aria-pressed="false">🎮 Play Manually</button>
+                    <button type="button" class="pub-action-btn" id="dqn-random-btn">Randomize</button>
+                    <button type="button" class="pub-action-btn" id="dqn-clear-btn">Clear</button>
+                  </div>
+                </div>
+                <div class="dqn-grid-wrap">
+                  <canvas id="dqn-canvas" width="290" height="290" aria-label="Interactive Q-learning maze grid"></canvas>
+
+                  <div class="dqn-dpad" id="dqn-dpad" aria-label="Directional controls for manual play">
+                    <span></span>
+                    <button type="button" class="dpad-btn" data-move="-1,0" aria-label="Move Up">↑</button>
+                    <span></span>
+                    <button type="button" class="dpad-btn" data-move="0,-1" aria-label="Move Left">←</button>
+                    <button type="button" class="dpad-btn" data-move="1,0" aria-label="Move Down">↓</button>
+                    <button type="button" class="dpad-btn" data-move="0,1" aria-label="Move Right">→</button>
+                  </div>
+
+                  <div class="dqn-legend">
+                    <span class="dqn-legend-item"><span class="dqn-swatch" style="background:#1D4ED8;"></span>Start</span>
+                    <span class="dqn-legend-item"><span class="dqn-swatch" style="background:#D97706;"></span>Goal</span>
+                    <span class="dqn-legend-item"><span class="dqn-swatch" style="background:#334155;"></span>Wall (click/drag)</span>
+                    <span class="dqn-legend-item"><span class="dqn-swatch" style="background:rgba(29,78,216,0.35);"></span>Q-Value</span>
+                  </div>
+
+                  <div class="dqn-hint" id="dqn-status">Click or drag cells to add/remove blocks, then press <strong>▶ Play Q-Agent</strong> or <strong>🎮 Play Manually</strong>.</div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Face Analyzer Tool -->
+          <article class="project-card reveal">
+            <div class="project-media" data-lightbox-img="img/face_analyzer.jpg" data-lightbox-title="Face Analyzer Tool" data-lightbox-caption="Deep learning facial landmark and appearance analysis tool — Winner of the Microsoft AI Hackathon at IIT Kharagpur.">
+              <img src="img/face_analyzer.jpg" alt="Face Analyzer Tool Landmark Mesh Visualization" loading="lazy">
+            </div>
+            <div class="project-content">
+              <div class="pub-badges">
+                <span class="venue-badge">Computer Vision</span>
+                <span class="award-badge">★ Microsoft AI Hackathon Winner</span>
+              </div>
+              <h3>Face Analyzer Tool</h3>
+              <p>
+                Built a deep learning-powered facial analysis system to deliver structured, unbiased assessments of facial geometry and appearance. Awarded first place at the Microsoft AI Hackathon competition held at IIT Kharagpur.
+              </p>
+              <div class="pub-actions">
+                <span class="mini-tag">Deep Learning</span>
+                <span class="mini-tag">Facial Landmarks</span>
+                <span class="mini-tag">IIT Kharagpur</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         HONORS, AWARDS & ACADEMIC SERVICE
+         =================================================================== -->
+    <section id="honors" class="section">
+      <div class="container">
+        <div class="section-header reveal">
+          <div>
+            <span class="section-eyebrow">Recognition &amp; Community</span>
+            <h2 class="section-title">Honors, Awards &amp; Service</h2>
+          </div>
+        </div>
+
+        <div class="honors-layout">
+          <div class="honors-grid">
+            <article class="honor-card reveal">
+              <span class="honor-year">ICLR 2022</span>
+              <h3>Best Paper Award</h3>
+              <p>Awarded Best Paper at ICLR 2022 for <em>Comparing Distributions by Measuring Differences that Affect Decision Making</em>.</p>
+            </article>
+
+            <article class="honor-card reveal">
+              <span class="honor-year">CVPRW 2019</span>
+              <h3>Best Paper Award</h3>
+              <p>Recognized for <em>Powering Robust Fashion Retrieval with Information Rich Feature Embeddings</em>.</p>
+            </article>
+
+            <article class="honor-card reveal">
+              <span class="honor-year">Waymo</span>
+              <h3>Cheetah Award</h3>
+              <p>Recognized for high-impact work on latency and compute optimization across Waymo perception systems.</p>
+            </article>
+
+            <article class="honor-card reveal">
+              <span class="honor-year">Adobe Inc.</span>
+              <h3>Outstanding Young Engineers Award</h3>
+              <p>Honored at Adobe for deep learning research and production visual search impact.</p>
+            </article>
+
+            <article class="honor-card reveal">
+              <span class="honor-year">Adobe MAX</span>
+              <h3>Main Stage Showcase</h3>
+              <p>Image synthesis research selected and demonstrated live on stage at Adobe MAX.</p>
+            </article>
+
+            <article class="honor-card reveal">
+              <span class="honor-year">IIT Kharagpur</span>
+              <h3>Microsoft AI Hackathon Winner</h3>
+              <p>First place winner at the Microsoft AI Hackathon competition at IIT Kharagpur.</p>
+            </article>
+          </div>
+
+          <aside class="service-panel reveal">
+            <h3>Academic Service &amp; Teaching</h3>
+
+            <div class="service-group">
+              <span class="service-label">Conference Reviewer</span>
+              <p>
+                <strong>NeurIPS</strong> (2021, 2022) &amp; <strong>ICLR</strong> (2022, 2023)
+              </p>
+            </div>
+
+            <div class="service-group">
+              <span class="service-label">Teaching</span>
+              <p>
+                Course Assistant, <a href="https://cs330.stanford.edu/" target="_blank" rel="noopener noreferrer" class="prose-link">Stanford CS 330</a> — <em>Deep Multi-Task and Meta-Learning</em> (Prof. Chelsea Finn)
+              </p>
+            </div>
+
+            <div class="service-group">
+              <span class="service-label">Core Stack</span>
+              <div class="timeline-tags" style="margin-top: 8px;">
+                <span class="mini-tag">Python</span>
+                <span class="mini-tag">C / C++</span>
+                <span class="mini-tag">PyTorch</span>
+                <span class="mini-tag">TensorFlow</span>
+                <span class="mini-tag">JAX / Gemini</span>
+                <span class="mini-tag">OpenCV</span>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================================
+       FOOTER
+       =================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <span>© <span id="footer-year">2026</span> Abhishek Sinha</span>
+        <span style="margin: 0 8px; opacity: 0.4;">·</span>
+        <span>Press <kbd style="font-family:var(--font-mono); font-size:0.75rem; padding:1px 5px; border:1px solid var(--border); border-radius:4px;">⌘K</kbd> to quick-search</span>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:abhishek.sinha94@gmail.com">abhishek.sinha94@gmail.com</a>
+        <a href="https://scholar.google.com/citations?hl=en&user=2llY8lwAAAAJ" target="_blank" rel="noopener noreferrer">Scholar</a>
+        <a href="https://www.linkedin.com/in/abhisheksinha94/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/a7b23" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="files/resume.pdf" target="_blank" rel="noopener noreferrer">Resume PDF</a>
+        <a href="#about">Back to top ↑</a>
+      </div>
     </div>
 
-    <script>
-        // Function to create placeholder div for broken images
-        function createPlaceholder(altText, width, height) {
-            const div = document.createElement('div');
-            div.className = 'placeholder-img';
-            if (document.documentElement.classList.contains('dark')) {
-                div.classList.add('dark');
-            }
-            div.style.width = `${width}px`;
-            div.style.height = `${height}px`;
-            div.textContent = altText || 'Image Placeholder';
-            return div;
-        }
-
-        // Theme Toggling Logic
-        const themeToggleBtn = document.getElementById('theme-toggle');
-        const darkIcon = document.getElementById('theme-toggle-dark-icon');
-        const lightIcon = document.getElementById('theme-toggle-light-icon');
-
-        // Check for saved theme in localStorage
-        if (localStorage.getItem('theme') === 'dark' || 
-           (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-            darkIcon.classList.remove('hidden');
-            lightIcon.classList.add('hidden');
-        }
-
-        themeToggleBtn.addEventListener('click', () => {
-            // toggle theme
-            document.documentElement.classList.toggle('dark');
-            darkIcon.classList.toggle('hidden');
-            lightIcon.classList.toggle('hidden');
-            
-            // save preference
-            if (document.documentElement.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // Scroll Animation Logic
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, {
-            threshold: 0.15
-        });
-
-        revealElements.forEach(el => {
-            observer.observe(el);
-        });
-
+    <!-- Preserved StatCounter Analytics -->
+    <script type="text/javascript">
+      var sc_project = 11673319;
+      var sc_invisible = 1;
+      var sc_security = "327094c7";
     </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+      <div class="statcounter">
+        <a title="Web Analytics Made Easy - StatCounter" href="http://statcounter.com/" target="_blank">
+          <img class="statcounter" src="//c.statcounter.com/11673319/0/327094c7/1/" alt="Web Analytics Made Easy - StatCounter">
+        </a>
+      </div>
+    </noscript>
+  </footer>
+
+  <!-- ===================================================================
+       MODAL 1: COMMAND PALETTE (⌘K)
+       =================================================================== -->
+  <div class="modal-backdrop" id="cmd-modal" role="dialog" aria-modal="true" aria-labelledby="cmd-dialog-label">
+    <div class="cmd-dialog">
+      <div class="cmd-input-row">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-tertiary)" aria-hidden="true">
+          <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        <label id="cmd-dialog-label" for="cmd-input" class="sr-only">Search papers, sections, or actions</label>
+        <input type="text" id="cmd-input" class="cmd-input" placeholder="Jump to section, search papers, or run action…" autocomplete="off">
+        <button type="button" class="pub-action-btn" id="cmd-close-btn">Esc</button>
+      </div>
+      <div class="cmd-results" id="cmd-results" role="listbox"></div>
+      <div class="cmd-footer">
+        <span>↑↓ Navigate · ↵ Select · Esc Close</span>
+        <span>Quick Palette</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 2: FIGURE LIGHTBOX
+       =================================================================== -->
+  <div class="modal-backdrop" id="lightbox-modal" role="dialog" aria-modal="true" aria-labelledby="lightbox-title">
+    <div class="lightbox-dialog">
+      <div class="lightbox-header">
+        <h3 class="lightbox-title" id="lightbox-title">Figure Preview</h3>
+        <button type="button" class="icon-btn" id="lightbox-close-btn" aria-label="Close figure preview">✕</button>
+      </div>
+      <div class="lightbox-stage">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-caption">
+        <span id="lightbox-caption-text"></span>
+        <a id="lightbox-paper-link" href="#" target="_blank" rel="noopener noreferrer" class="pub-action-btn primary" style="display:none;">Open Paper PDF ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================
+       MODAL 3: RESUME PDF PREVIEW
+       =================================================================== -->
+  <div class="modal-backdrop" id="resume-modal" role="dialog" aria-modal="true" aria-labelledby="resume-modal-title">
+    <div class="resume-dialog">
+      <div class="lightbox-header">
+        <h3 class="lightbox-title" id="resume-modal-title">Abhishek Sinha — Resume</h3>
+        <div style="display:flex; align-items:center; gap:8px;">
+          <a href="files/resume.pdf" target="_blank" rel="noopener noreferrer" class="pub-action-btn primary">Open Full Tab ↗</a>
+          <a href="files/resume.pdf" download="Abhishek_Sinha_Resume.pdf" class="pub-action-btn">Download PDF</a>
+          <button type="button" class="icon-btn" id="resume-close-btn" aria-label="Close resume preview">✕</button>
+        </div>
+      </div>
+      <iframe class="resume-iframe" id="resume-iframe" title="Abhishek Sinha Resume PDF"></iframe>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js?v=4" defer></script>
 </body>
 </html>
